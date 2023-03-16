@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfilePhotoCVC" id="gTV-IL-0wX" customClass="ProfilePhotoCVC" customModule="RickAndMorty_Combine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOw-7D-EfN">
+                        <rect key="frame" x="20" y="30" width="374" height="354"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="qRY-Ll-vBH">
+                                <rect key="frame" x="87" y="50" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="EAI-ct-RKl"/>
+                                    <constraint firstAttribute="width" constant="200" id="qWU-Ho-fmN"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mert Gökduman" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-eD-nth">
+                                <rect key="frame" x="20" y="280" width="334" height="44"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" name="LabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KEq-78-JfU">
+                                <rect key="frame" x="329" y="5" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="YuA-cE-cXg"/>
+                                    <constraint firstAttribute="height" constant="40" id="gRg-6V-TFn"/>
+                                </constraints>
+                                <color key="tintColor" name="LabelColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="BGColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="OP7-eD-nth" secondAttribute="trailing" constant="20" id="3w3-Tn-NVh"/>
+                            <constraint firstAttribute="trailing" secondItem="KEq-78-JfU" secondAttribute="trailing" constant="5" id="TcM-ZF-kCT"/>
+                            <constraint firstItem="qRY-Ll-vBH" firstAttribute="top" secondItem="NOw-7D-EfN" secondAttribute="top" constant="50" id="Usc-JH-1BV"/>
+                            <constraint firstItem="qRY-Ll-vBH" firstAttribute="centerX" secondItem="NOw-7D-EfN" secondAttribute="centerX" id="X5g-CG-V73"/>
+                            <constraint firstItem="OP7-eD-nth" firstAttribute="centerX" secondItem="NOw-7D-EfN" secondAttribute="centerX" id="Yc7-VE-rac"/>
+                            <constraint firstItem="OP7-eD-nth" firstAttribute="top" secondItem="qRY-Ll-vBH" secondAttribute="bottom" constant="30" id="lWe-C9-lFH"/>
+                            <constraint firstItem="KEq-78-JfU" firstAttribute="top" secondItem="NOw-7D-EfN" secondAttribute="top" constant="5" id="ncx-AL-c50"/>
+                            <constraint firstItem="OP7-eD-nth" firstAttribute="leading" secondItem="NOw-7D-EfN" secondAttribute="leading" constant="20" id="xt5-Vc-Mot"/>
+                            <constraint firstAttribute="bottom" secondItem="OP7-eD-nth" secondAttribute="bottom" constant="30" id="yMu-UO-vXx"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" name="BGColor"/>
+            <constraints>
+                <constraint firstItem="NOw-7D-EfN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="b0v-0v-d5b"/>
+                <constraint firstAttribute="bottom" secondItem="NOw-7D-EfN" secondAttribute="bottom" constant="30" id="bf3-mE-cpf"/>
+                <constraint firstAttribute="trailing" secondItem="NOw-7D-EfN" secondAttribute="trailing" constant="20" id="uyO-MT-ALz"/>
+                <constraint firstItem="NOw-7D-EfN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="vlD-uy-5rD"/>
+            </constraints>
+            <connections>
+                <outlet property="btnEdit" destination="KEq-78-JfU" id="iEb-Hn-EOl"/>
+                <outlet property="imgUser" destination="qRY-Ll-vBH" id="Pf8-zt-8Ba"/>
+                <outlet property="lblUserName" destination="OP7-eD-nth" id="oRm-50-hXH"/>
+                <outlet property="profileView" destination="NOw-7D-EfN" id="usp-Tc-hbz"/>
+            </connections>
+            <point key="canvasLocation" x="-9" y="20"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <image name="user" width="400" height="400"/>
+        <namedColor name="BGColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LabelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

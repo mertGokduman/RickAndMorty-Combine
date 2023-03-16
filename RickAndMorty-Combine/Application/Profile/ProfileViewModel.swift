@@ -1,0 +1,12 @@
+//
+//  ProfileViewModel.swift
+//  RickAndMorty-Combine
+//
+//  Created by Mert Gökduman on 16.03.2023.
+//
+
+import Foundation
+
+final class LocationViewModel: BaseViewModel {
+    
+}

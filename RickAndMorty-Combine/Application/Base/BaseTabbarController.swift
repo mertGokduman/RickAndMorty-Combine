@@ -56,7 +56,7 @@ class BaseTabbarController: UITabBarController {
         let btnAdd = UIButton()
         btnAdd.frame = CGRect(x: 0, y: 0, width: width!, height: width!)
         btnAdd.center = CGPoint(x: view.frame.width / 2, y: view.frame.maxY - self.tabBar.frame.height - (width! / 2.75))
-        btnAdd.setImage(UIImage(named: "homeButton"), for: .normal)
+        btnAdd.setImage(UIImage(named: "home"), for: .normal)
         btnAdd.layer.shadowColor = UIColor.black.cgColor
         btnAdd.layer.shadowRadius = 5
         btnAdd.layer.shadowOpacity = 0.3
@@ -86,13 +86,14 @@ class BaseTabbarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        self.selectedIndex = 1
+        self.selectedIndex = 2
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         applyStyles()
+        addAddButton()
     }
 
     private func getTabBarItemable(from viewController: UIViewController) -> TabBarItemable? {
@@ -106,18 +107,16 @@ class BaseTabbarController: UITabBarController {
 
     // MARK: - Tabbar UI
     private func applyStyles() {
-        selectedIndex = 1
+        selectedIndex = 2
         let appearance = UITabBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = .red
+        appearance.backgroundColor = UIColor(named: "BGColor")
         let tabbarItemAppearance = UITabBarItemAppearance()
-        appearance.shadowColor = .black
+        appearance.shadowColor = UIColor(named: "TabbarSelectedColor")
         tabbarItemAppearance.normal.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
-                                                           NSAttributedString.Key.foregroundColor: UIColor.white]
-        tabbarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
-                                                             NSAttributedString.Key.foregroundColor: UIColor.red]
-        tabbarItemAppearance.normal.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
-        tabbarItemAppearance.selected.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 10)
+                                                           NSAttributedString.Key.foregroundColor: UIColor(named: "LabelColor") ?? .white]
+        tabbarItemAppearance.selected.titleTextAttributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .bold),
+                                                             NSAttributedString.Key.foregroundColor: UIColor(named: "TabbarSelectedColor") ?? .selectedTabbarColor]
         appearance.stackedLayoutAppearance = tabbarItemAppearance
         self.tabBarItem.image?.withAlignmentRectInsets(UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         self.tabBar.standardAppearance = appearance
@@ -139,15 +138,15 @@ class BaseTabbarController: UITabBarController {
     }
 
     @objc private func btnAddTapped() {
-        self.selectedIndex = 1
+        self.selectedIndex = 2
     }
 
     func tabChangedTo(selectedIndex: Int) {
-        if selectedIndex == 1 {
-            btnHome.setImage(UIImage(named: "homeButton2"),
+        if selectedIndex == 2 {
+            btnHome.setImage(!isDarkMode ? UIImage(named: "homeSelected") : UIImage(named: "darkHomeSelected"),
                             for: .normal)
         } else {
-            btnHome.setImage(UIImage(named: "homeButton"),
+            btnHome.setImage(!isDarkMode ? UIImage(named: "home") : UIImage(named: "darkHome"),
                             for: .normal)
         }
     }

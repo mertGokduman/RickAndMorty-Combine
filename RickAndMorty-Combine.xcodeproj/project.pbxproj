@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		8B5FAF4B21A9F1320B3D8AA2 /* Pods_RickAndMorty_Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2A57303C99229C26991BC4 /* Pods_RickAndMorty_Combine.framework */; };
 		B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41E543029C2183B00F88DE1 /* SafeUnwrap.swift */; };
+		B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16529C35BB4002FF490 /* CharacterViewController.swift */; };
+		B441B16829C35BC0002FF490 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16729C35BC0002FF490 /* CharacterViewModel.swift */; };
+		B441B16A29C35CFA002FF490 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16929C35CFA002FF490 /* EpisodesViewController.swift */; };
+		B441B16C29C35D02002FF490 /* EpisodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16B29C35D02002FF490 /* EpisodeViewModel.swift */; };
+		B441B16E29C35E80002FF490 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16D29C35E80002FF490 /* LocationsViewController.swift */; };
+		B441B17029C35E94002FF490 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16F29C35E94002FF490 /* LocationsViewModel.swift */; };
+		B441B17229C35F35002FF490 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B17129C35F35002FF490 /* ProfileViewController.swift */; };
+		B441B17429C35F3E002FF490 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B17329C35F3E002FF490 /* ProfileViewModel.swift */; };
+		B441B17629C36ACB002FF490 /* UIColor + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B17529C36ACB002FF490 /* UIColor + Extensions.swift */; };
+		B441B17B29C37633002FF490 /* ProfilePhotoCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B17929C37633002FF490 /* ProfilePhotoCVC.swift */; };
+		B441B17C29C37633002FF490 /* ProfilePhotoCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B441B17A29C37633002FF490 /* ProfilePhotoCVC.xib */; };
+		B441B18029C37BEF002FF490 /* AppearanceCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B17E29C37BEF002FF490 /* AppearanceCVC.swift */; };
+		B441B18129C37BEF002FF490 /* AppearanceCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B441B17F29C37BEF002FF490 /* AppearanceCVC.xib */; };
 		B464408A29C1FB1B009BCACB /* EpisodeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B464408829C1FB1B009BCACB /* EpisodeCVC.swift */; };
 		B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B464408929C1FB1B009BCACB /* EpisodeCVC.xib */; };
 		B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B464408D29C1FC59009BCACB /* SingleEpisodeCVC.swift */; };
@@ -45,6 +58,19 @@
 /* Begin PBXFileReference section */
 		AA2A57303C99229C26991BC4 /* Pods_RickAndMorty_Combine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty_Combine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41E543029C2183B00F88DE1 /* SafeUnwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeUnwrap.swift; sourceTree = "<group>"; };
+		B441B16529C35BB4002FF490 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		B441B16729C35BC0002FF490 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		B441B16929C35CFA002FF490 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
+		B441B16B29C35D02002FF490 /* EpisodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewModel.swift; sourceTree = "<group>"; };
+		B441B16D29C35E80002FF490 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		B441B16F29C35E94002FF490 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		B441B17129C35F35002FF490 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B441B17329C35F3E002FF490 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B441B17529C36ACB002FF490 /* UIColor + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extensions.swift"; sourceTree = "<group>"; };
+		B441B17929C37633002FF490 /* ProfilePhotoCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoCVC.swift; sourceTree = "<group>"; };
+		B441B17A29C37633002FF490 /* ProfilePhotoCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfilePhotoCVC.xib; sourceTree = "<group>"; };
+		B441B17E29C37BEF002FF490 /* AppearanceCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceCVC.swift; sourceTree = "<group>"; };
+		B441B17F29C37BEF002FF490 /* AppearanceCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppearanceCVC.xib; sourceTree = "<group>"; };
 		B464408829C1FB1B009BCACB /* EpisodeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCVC.swift; sourceTree = "<group>"; };
 		B464408929C1FB1B009BCACB /* EpisodeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCVC.xib; sourceTree = "<group>"; };
 		B464408D29C1FC59009BCACB /* SingleEpisodeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEpisodeCVC.swift; sourceTree = "<group>"; };
@@ -109,6 +135,33 @@
 				DA8960B59FB7FB5445915693 /* Pods-RickAndMorty-Combine.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B441B17729C37607002FF490 /* ProfileCells */ = {
+			isa = PBXGroup;
+			children = (
+				B441B17D29C37BDB002FF490 /* AppearanceCell */,
+				B441B17829C3760C002FF490 /* ProfilePhotoCell */,
+			);
+			path = ProfileCells;
+			sourceTree = "<group>";
+		};
+		B441B17829C3760C002FF490 /* ProfilePhotoCell */ = {
+			isa = PBXGroup;
+			children = (
+				B441B17929C37633002FF490 /* ProfilePhotoCVC.swift */,
+				B441B17A29C37633002FF490 /* ProfilePhotoCVC.xib */,
+			);
+			path = ProfilePhotoCell;
+			sourceTree = "<group>";
+		};
+		B441B17D29C37BDB002FF490 /* AppearanceCell */ = {
+			isa = PBXGroup;
+			children = (
+				B441B17E29C37BEF002FF490 /* AppearanceCVC.swift */,
+				B441B17F29C37BEF002FF490 /* AppearanceCVC.xib */,
+			);
+			path = AppearanceCell;
 			sourceTree = "<group>";
 		};
 		B464408729C1FB08009BCACB /* EpisodeCell */ = {
@@ -217,6 +270,7 @@
 			children = (
 				B4A5764B29C0FA7200F33CB9 /* UIViewController + Extension.swift */,
 				B4A5765329C103A700F33CB9 /* UICollectionView + Extensions.swift */,
+				B441B17529C36ACB002FF490 /* UIColor + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -281,6 +335,8 @@
 		B4A5764029C0F8DD00F33CB9 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				B441B16529C35BB4002FF490 /* CharacterViewController.swift */,
+				B441B16729C35BC0002FF490 /* CharacterViewModel.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";
@@ -288,6 +344,8 @@
 		B4A5764129C0F8E200F33CB9 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				B441B16D29C35E80002FF490 /* LocationsViewController.swift */,
+				B441B16F29C35E94002FF490 /* LocationsViewModel.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -295,6 +353,8 @@
 		B4A5764229C0F8E800F33CB9 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B441B16929C35CFA002FF490 /* EpisodesViewController.swift */,
+				B441B16B29C35D02002FF490 /* EpisodeViewModel.swift */,
 			);
 			path = Episodes;
 			sourceTree = "<group>";
@@ -302,6 +362,9 @@
 		B4A5764329C0F8FE00F33CB9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B441B17729C37607002FF490 /* ProfileCells */,
+				B441B17129C35F35002FF490 /* ProfileViewController.swift */,
+				B441B17329C35F3E002FF490 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -407,7 +470,9 @@
 			files = (
 				B4A5761829C0E61600F33CB9 /* LaunchScreen.storyboard in Resources */,
 				B464409029C1FC59009BCACB /* SingleEpisodeCVC.xib in Resources */,
+				B441B18129C37BEF002FF490 /* AppearanceCVC.xib in Resources */,
 				B4E8CFB229C1EFFF0005CDC5 /* SingleCharacterCVC.xib in Resources */,
+				B441B17C29C37633002FF490 /* ProfilePhotoCVC.xib in Resources */,
 				B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */,
 				B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */,
 				B4A5761529C0E61600F33CB9 /* Assets.xcassets in Resources */,
@@ -466,24 +531,35 @@
 			files = (
 				B464408A29C1FB1B009BCACB /* EpisodeCVC.swift in Sources */,
 				B4A5763A29C0F1EF00F33CB9 /* LocationRequestModel.swift in Sources */,
+				B441B16A29C35CFA002FF490 /* EpisodesViewController.swift in Sources */,
+				B441B17629C36ACB002FF490 /* UIColor + Extensions.swift in Sources */,
+				B441B16C29C35D02002FF490 /* EpisodeViewModel.swift in Sources */,
 				B4A5765429C103A700F33CB9 /* UICollectionView + Extensions.swift in Sources */,
 				B4A5765029C0FC1A00F33CB9 /* HomeViewModel.swift in Sources */,
+				B441B17229C35F35002FF490 /* ProfileViewController.swift in Sources */,
 				B4A5763429C0EB2E00F33CB9 /* CharactersResponseModel.swift in Sources */,
 				B4A5764A29C0F94700F33CB9 /* BaseTabbarController.swift in Sources */,
 				B4A5762929C0E83E00F33CB9 /* RequestModel.swift in Sources */,
 				B4A5765229C0FCA600F33CB9 /* HomeViewController.swift in Sources */,
 				B4A5764829C0F92400F33CB9 /* BaseViewModel.swift in Sources */,
+				B441B16E29C35E80002FF490 /* LocationsViewController.swift in Sources */,
 				B464409429C20D24009BCACB /* WelcomeHeader.swift in Sources */,
+				B441B16829C35BC0002FF490 /* CharacterViewModel.swift in Sources */,
 				B4A5763C29C0F2BB00F33CB9 /* LocationResponseModel.swift in Sources */,
 				B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */,
 				B4A5762729C0E82700F33CB9 /* NetworkManager.swift in Sources */,
+				B441B17429C35F3E002FF490 /* ProfileViewModel.swift in Sources */,
 				B4A5763629C0EFCD00F33CB9 /* EpisodeRequestModel.swift in Sources */,
 				B4A5765829C103C500F33CB9 /* ReusableView.swift in Sources */,
+				B441B17029C35E94002FF490 /* LocationsViewModel.swift in Sources */,
 				B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */,
+				B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */,
 				B4A5760C29C0E61500F33CB9 /* AppDelegate.swift in Sources */,
 				B4E8CFAC29C1EF410005CDC5 /* CharacterCVC.swift in Sources */,
 				B4A5764C29C0FA7200F33CB9 /* UIViewController + Extension.swift in Sources */,
 				B4A5764629C0F91A00F33CB9 /* BaseVC.swift in Sources */,
+				B441B17B29C37633002FF490 /* ProfilePhotoCVC.swift in Sources */,
+				B441B18029C37BEF002FF490 /* AppearanceCVC.swift in Sources */,
 				B4A5763829C0F0DC00F33CB9 /* EpisodeResponseModel.swift in Sources */,
 				B4E8CFB129C1EFFF0005CDC5 /* SingleCharacterCVC.swift in Sources */,
 				B4A5760E29C0E61500F33CB9 /* SceneDelegate.swift in Sources */,

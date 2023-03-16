@@ -19,18 +19,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window = UIWindow(windowScene: windowScene)
 
-        let vc = HomeViewController()
+        let tabChilds = [CharacterViewController(),
+                         EpisodesViewController(),
+                         HomeViewController(),
+                         LocationsViewController(),
+                         ProfileViewController()]
+        let tabControllers = tabChilds.map { UINavigationController(rootViewController: $0) }
+        let vc = BaseTabbarController(tabChildren: tabControllers)
 
-        let rootVC = vc
         customizeNavigationController()
-        self.window?.rootViewController = rootVC
+        self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
     }
 
     private func customizeNavigationController() {
         let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20,
                                                                          weight: .bold),
-                          NSAttributedString.Key.foregroundColor: UIColor.white]
+                          NSAttributedString.Key.foregroundColor: UIColor(named: "LabelColor") ?? .black]
         let backButtonAppearance = UIBarButtonItemAppearance(style: .plain)
         backButtonAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.clear]
         let appearance = UINavigationBarAppearance()
