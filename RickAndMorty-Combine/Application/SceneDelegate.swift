@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appearance.shadowColor = .clear
         appearance.backButtonAppearance = backButtonAppearance
 
-        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().tintColor = UIColor(named: "LabelColor")
         UINavigationBar.appearance().setBackgroundImage(UIImage(),
                                                         for: .default)
         UINavigationBar.appearance().standardAppearance = appearance

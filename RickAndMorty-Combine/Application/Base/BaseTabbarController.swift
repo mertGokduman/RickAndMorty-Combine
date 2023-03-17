@@ -146,7 +146,7 @@ class BaseTabbarController: UITabBarController {
             btnHome.setImage(!isDarkMode ? UIImage(named: "homeSelected") : UIImage(named: "darkHomeSelected"),
                             for: .normal)
         } else {
-            btnHome.setImage(!isDarkMode ? UIImage(named: "home") : UIImage(named: "darkHome"),
+            btnHome.setImage(!isDarkMode ? UIImage(named: "home") : UIImage(named: "home"),
                             for: .normal)
         }
     }

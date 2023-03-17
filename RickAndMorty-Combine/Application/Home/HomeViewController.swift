@@ -159,6 +159,7 @@ extension HomeViewController: UICollectionViewDataSource {
                         at indexPath: IndexPath) -> UICollectionReusableView {
         guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader,
                                                                                withReuseIdentifier: WelcomeHeader.identifier, for: indexPath) as? WelcomeHeader else { return UICollectionReusableView() }
+        headerView.delegate = self
         headerView.layer.shadowColor = UIColor.clear.cgColor
         headerView.layer.shadowOffset = CGSize(width: 0,
                                                height: 12)
@@ -223,6 +224,13 @@ extension HomeViewController: UIScrollViewDelegate {
         } else {
             self.headerView?.layer.shadowColor = UIColor.black.cgColor
         }
+    }
+}
+
+// MARK: - WelcomeHeaderDelegate
+extension HomeViewController: WelcomeHeaderDelegate {
+    func profileImageTapped() {
+        self.tabBarController?.selectedIndex = 4
     }
 }
 

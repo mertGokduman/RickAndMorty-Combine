@@ -36,6 +36,14 @@ class ProfileViewController: BaseVC<LocationViewModel> {
 
     var typeArray: [ProfileCollectionViewType] = [.photo, .appearance]
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.tabBarController?.tabBar.isHidden = false
+        self.collectionView.reloadData()
+        self.btnAddShow()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -58,8 +66,6 @@ class ProfileViewController: BaseVC<LocationViewModel> {
         ])
 
         self.setupCollectionView()
-
-        self.collectionView.reloadData()
     }
 
     // MARK: - COLLECTIONVIEW SETUPS
@@ -106,6 +112,8 @@ extension ProfileViewController: UICollectionViewDataSource {
         case .appearance:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppearanceCVC",
                                                                 for: indexPath) as? AppearanceCVC else { return UICollectionViewCell() }
+            cell.delegate = self
+            cell.setAppIcon()
             return cell
         case .appIcon:
             return UICollectionViewCell()
@@ -137,6 +145,24 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
                           height: 100)
         case .appIcon:
             return .zero
+        }
+    }
+}
+
+// MARK: - AppearanceCellDelegate
+extension ProfileViewController: AppearanceCellDelegate {
+
+    func btnAppearancePressed() {
+        let vc = AppIconViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func switchChanged(isOn: Bool) {
+        UIView.animate(withDuration: 0.5) {
+            if #available(iOS 13.0, *) {
+                let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
+                sceneDelegate.window?.overrideUserInterfaceStyle = isOn ? .dark : .light
+            }
         }
     }
 }

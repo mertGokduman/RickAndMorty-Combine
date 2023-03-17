@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol WelcomeHeaderDelegate: AnyObject {
+    func profileImageTapped()
+}
+
 class WelcomeHeader: UICollectionReusableView {
+
+    weak var delegate: WelcomeHeaderDelegate?
 
     static let identifier = "WelcomeHeader"
     static let nibName = "WelcomeHeader"
@@ -25,5 +31,12 @@ class WelcomeHeader: UICollectionReusableView {
         super.awakeFromNib()
         // Initialization code
 
+        btnUser.addTarget(self,
+                          action: #selector(btnUserTapped),
+                          for: .touchUpInside)
+    }
+
+    @objc private func btnUserTapped() {
+        delegate?.profileImageTapped()
     }
 }
