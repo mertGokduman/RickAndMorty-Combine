@@ -40,8 +40,9 @@ class AppearanceCVC: UICollectionViewCell {
                              for: .touchUpInside)
     }
 
-    func setAppIcon() {
-        let appIconName = AppIconManager.shared.getSelectedAppIcon()?.firstLowercased
+    func fillCell(isDarkMode: Bool,
+                  appIconName: String?) {
+        darkModeSwitch.isOn = isDarkMode
         btnAppIcon.setImage(UIImage(named: appIconName ?? "appIcon1"),
                             for: .normal)
     }

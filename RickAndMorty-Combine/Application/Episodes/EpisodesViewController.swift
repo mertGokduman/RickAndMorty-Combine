@@ -13,6 +13,7 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(named: "BGColor")
+        self.navigationController?.title = "Episodes"
     }
 }
 

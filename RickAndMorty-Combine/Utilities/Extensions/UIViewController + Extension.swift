@@ -22,4 +22,17 @@ extension UIViewController {
             return false
         }
     }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func makeViewDismissKeyboard(cancelsTouchesInView: Bool? = nil) {
+        let tapGesture = UITapGestureRecognizer(target: self,
+                                                action: #selector(dismissKeyboard))
+        if let cancelsTouchesInView = cancelsTouchesInView {
+            tapGesture.cancelsTouchesInView = cancelsTouchesInView
+        }
+        view.addGestureRecognizer(tapGesture)
+    }
 }

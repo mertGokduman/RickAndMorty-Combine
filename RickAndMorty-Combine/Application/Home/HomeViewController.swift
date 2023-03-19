@@ -42,9 +42,9 @@ class HomeViewController: BaseVC<HomeViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        viewModel.getCharacters()
-        viewModel.getEpisode()
-        viewModel.getLocation()
+        navigationController?.setNavigationBarHidden(true, animated: false)
+
+        viewModel.getDatas()
     }
 
     override func viewDidLoad() {
@@ -57,6 +57,17 @@ class HomeViewController: BaseVC<HomeViewModel> {
 
     // MARK: - BINDING DATAS
     private func bind() {
+
+        viewModel.$profilePicture
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
+
+        viewModel.$name
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
+
         viewModel.$characters
             .sink { [weak self] _ in
                 guard let self = self else { return }
@@ -166,6 +177,8 @@ extension HomeViewController: UICollectionViewDataSource {
         headerView.layer.shadowRadius = 8
         headerView.layer.shadowOpacity = 0.12
         headerView.clipsToBounds = false
+        headerView.fillHeader(profilePicture: self.viewModel.profilePicture,
+                              name: self.viewModel.name)
         self.headerView = headerView
         return headerView
     }

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="PhotoTVC" customModule="RickAndMorty_Combine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vn-pS-tZ0">
+                        <rect key="frame" x="132" y="50" width="150" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="5gb-PH-7gu"/>
+                            <constraint firstAttribute="width" constant="150" id="lhk-Sa-FOt"/>
+                        </constraints>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" image="user"/>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLU-6f-t7z">
+                        <rect key="frame" x="20" y="210" width="374" height="30"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Add Profile Picture">
+                            <color key="titleColor" systemColor="linkColor"/>
+                        </state>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="0Vn-pS-tZ0" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="7TK-IG-yC7"/>
+                    <constraint firstAttribute="trailing" secondItem="zLU-6f-t7z" secondAttribute="trailing" constant="20" id="Mqu-Eh-fas"/>
+                    <constraint firstItem="0Vn-pS-tZ0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="SAo-2C-gYD"/>
+                    <constraint firstAttribute="bottom" secondItem="zLU-6f-t7z" secondAttribute="bottom" constant="10" id="bOO-xM-qbc"/>
+                    <constraint firstItem="zLU-6f-t7z" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="hKB-nA-QXo"/>
+                    <constraint firstItem="zLU-6f-t7z" firstAttribute="top" secondItem="0Vn-pS-tZ0" secondAttribute="bottom" constant="10" id="ie4-L7-Zgk"/>
+                    <constraint firstItem="0Vn-pS-tZ0" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="yuc-d0-hRg"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="btnAddPhoto" destination="zLU-6f-t7z" id="joa-y0-0V9"/>
+                <outlet property="btnPhoto" destination="0Vn-pS-tZ0" id="s8A-nj-4Lu"/>
+            </connections>
+            <point key="canvasLocation" x="-9" y="20"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="user" width="400" height="400"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

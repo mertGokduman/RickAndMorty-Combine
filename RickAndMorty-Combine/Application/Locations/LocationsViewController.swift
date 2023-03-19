@@ -13,6 +13,7 @@ class LocationsViewController: BaseVC<BaseViewModel> {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(named: "BGColor")
+        self.navigationController?.title = "Locations"
     }
 }
 

@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol ProfilePhotoDelegate: AnyObject {
+    func btnEditPressed()
+}
+
 class ProfilePhotoCVC: UICollectionViewCell {
+
+    weak var delegate: ProfilePhotoDelegate?
 
     @IBOutlet weak var profileView: UIView! {
         didSet {
@@ -34,6 +40,23 @@ class ProfilePhotoCVC: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+
+        btnEdit.addTarget(self,
+                          action: #selector(btnEditTapped),
+                          for: .touchUpInside)
     }
 
+    func fillCell(with image: UIImage?,
+                  userName: String?) {
+        lblUserName.text = userName
+        if let image = image {
+            imgUser.image = image
+        } else {
+            imgUser.image = UIImage(named: "user")
+        }
+    }
+
+    @objc private func btnEditTapped() {
+        delegate?.btnEditPressed()
+    }
 }

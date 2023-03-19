@@ -27,6 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabControllers = tabChilds.map { UINavigationController(rootViewController: $0) }
         let vc = BaseTabbarController(tabChildren: tabControllers)
 
+        setupAppearance()
         customizeNavigationController()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
@@ -50,6 +51,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                                         for: .default)
         UINavigationBar.appearance().standardAppearance = appearance
         UINavigationBar.appearance().scrollEdgeAppearance = appearance
+    }
+
+    private func setupAppearance() {
+        let darkModeEnable = UserDefaults.standard.bool(forKey: AppConstants.UserDefaultsConstants.appearance)
+        window?.overrideUserInterfaceStyle = darkModeEnable ? .dark : .light
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

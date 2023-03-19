@@ -36,6 +36,18 @@ class WelcomeHeader: UICollectionReusableView {
                           for: .touchUpInside)
     }
 
+    func fillHeader(profilePicture: UIImage?,
+                    name: String?) {
+        if let image = profilePicture {
+            btnUser.setImage(image,
+                             for: .normal)
+        }
+
+        if let name = name {
+            lblUserName.text = "Welcome back \(name)"
+        }
+    }
+
     @objc private func btnUserTapped() {
         delegate?.profileImageTapped()
     }

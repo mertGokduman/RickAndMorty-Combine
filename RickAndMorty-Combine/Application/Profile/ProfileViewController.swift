@@ -40,7 +40,7 @@ class ProfileViewController: BaseVC<LocationViewModel> {
         super.viewWillAppear(animated)
 
         self.tabBarController?.tabBar.isHidden = false
-        self.collectionView.reloadData()
+        self.viewModel.getUserDatas()
         self.btnAddShow()
     }
 
@@ -48,10 +48,34 @@ class ProfileViewController: BaseVC<LocationViewModel> {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(named: "BGColor")
-
         self.navigationItem.title = "Profile"
 
         setupUI()
+        bind()
+    }
+
+    // MARK: - Bind
+    private func bind() {
+
+        viewModel.$profilePicture
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
+
+        viewModel.$fullName
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
+
+        viewModel.$isDarkModeOn
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
+
+        viewModel.$appIconName
+            .sink { _ in
+                self.collectionView.reloadData()
+            }.store(in: &cancelables)
     }
 
     // MARK: - SETUP UI
@@ -108,12 +132,16 @@ extension ProfileViewController: UICollectionViewDataSource {
         case .photo:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProfilePhotoCVC",
                                                                 for: indexPath) as? ProfilePhotoCVC else { return UICollectionViewCell() }
+            cell.delegate = self
+            cell.fillCell(with: self.viewModel.profilePicture,
+                          userName: self.viewModel.fullName)
             return cell
         case .appearance:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppearanceCVC",
                                                                 for: indexPath) as? AppearanceCVC else { return UICollectionViewCell() }
             cell.delegate = self
-            cell.setAppIcon()
+            cell.fillCell(isDarkMode: self.viewModel.isDarkModeOn ?? false,
+                          appIconName: self.viewModel.appIconName)
             return cell
         case .appIcon:
             return UICollectionViewCell()
@@ -162,8 +190,18 @@ extension ProfileViewController: AppearanceCellDelegate {
             if #available(iOS 13.0, *) {
                 let sceneDelegate = UIApplication.shared.connectedScenes.first!.delegate as! SceneDelegate
                 sceneDelegate.window?.overrideUserInterfaceStyle = isOn ? .dark : .light
+                UserDefaults.standard.set(isOn, forKey: AppConstants.UserDefaultsConstants.appearance)
             }
         }
+    }
+}
+
+// MARK: - ProfilePhotoDelegate
+extension ProfileViewController: ProfilePhotoDelegate {
+
+    func btnEditPressed() {
+        let vc = EditProfileViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

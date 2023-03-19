@@ -28,6 +28,15 @@
 		B441B18D29C4B6DA002FF490 /* UIApplication + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B18C29C4B6DA002FF490 /* UIApplication + Extension.swift */; };
 		B441B18F29C4B817002FF490 /* AppIconManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B18E29C4B817002FF490 /* AppIconManager.swift */; };
 		B441B19129C4C071002FF490 /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B19029C4C071002FF490 /* String + Extension.swift */; };
+		B459F6F529C74205003A2FF2 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F6F429C74205003A2FF2 /* AppConstants.swift */; };
+		B459F6F829C74524003A2FF2 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F6F729C74524003A2FF2 /* EditProfileViewController.swift */; };
+		B459F6FA29C74576003A2FF2 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F6F929C74576003A2FF2 /* EditProfileViewModel.swift */; };
+		B459F6FC29C7469C003A2FF2 /* UITableView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F6FB29C7469C003A2FF2 /* UITableView + Extension.swift */; };
+		B459F70229C747F3003A2FF2 /* PhotoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F70029C747F3003A2FF2 /* PhotoTVC.swift */; };
+		B459F70329C747F3003A2FF2 /* PhotoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B459F70129C747F3003A2FF2 /* PhotoTVC.xib */; };
+		B459F70629C74DA9003A2FF2 /* InfoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F70429C74DA9003A2FF2 /* InfoTVC.swift */; };
+		B459F70729C74DA9003A2FF2 /* InfoTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B459F70529C74DA9003A2FF2 /* InfoTVC.xib */; };
+		B459F70B29C76A20003A2FF2 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459F70A29C76A20003A2FF2 /* UIImage + Extension.swift */; };
 		B464408A29C1FB1B009BCACB /* EpisodeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B464408829C1FB1B009BCACB /* EpisodeCVC.swift */; };
 		B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B464408929C1FB1B009BCACB /* EpisodeCVC.xib */; };
 		B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B464408D29C1FC59009BCACB /* SingleEpisodeCVC.swift */; };
@@ -83,6 +92,15 @@
 		B441B18C29C4B6DA002FF490 /* UIApplication + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication + Extension.swift"; sourceTree = "<group>"; };
 		B441B18E29C4B817002FF490 /* AppIconManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconManager.swift; sourceTree = "<group>"; };
 		B441B19029C4C071002FF490 /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		B459F6F429C74205003A2FF2 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		B459F6F729C74524003A2FF2 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		B459F6F929C74576003A2FF2 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		B459F6FB29C7469C003A2FF2 /* UITableView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView + Extension.swift"; sourceTree = "<group>"; };
+		B459F70029C747F3003A2FF2 /* PhotoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoTVC.swift; sourceTree = "<group>"; };
+		B459F70129C747F3003A2FF2 /* PhotoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoTVC.xib; sourceTree = "<group>"; };
+		B459F70429C74DA9003A2FF2 /* InfoTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTVC.swift; sourceTree = "<group>"; };
+		B459F70529C74DA9003A2FF2 /* InfoTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTVC.xib; sourceTree = "<group>"; };
+		B459F70A29C76A20003A2FF2 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		B464408829C1FB1B009BCACB /* EpisodeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCVC.swift; sourceTree = "<group>"; };
 		B464408929C1FB1B009BCACB /* EpisodeCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCVC.xib; sourceTree = "<group>"; };
 		B464408D29C1FC59009BCACB /* SingleEpisodeCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEpisodeCVC.swift; sourceTree = "<group>"; };
@@ -194,6 +212,51 @@
 			path = AppIconCell;
 			sourceTree = "<group>";
 		};
+		B459F6F329C741F5003A2FF2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B459F6F429C74205003A2FF2 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B459F6F629C74500003A2FF2 /* EditProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				B459F6FD29C747C7003A2FF2 /* EditProfileCells */,
+				B459F6F729C74524003A2FF2 /* EditProfileViewController.swift */,
+				B459F6F929C74576003A2FF2 /* EditProfileViewModel.swift */,
+			);
+			path = EditProfileVC;
+			sourceTree = "<group>";
+		};
+		B459F6FD29C747C7003A2FF2 /* EditProfileCells */ = {
+			isa = PBXGroup;
+			children = (
+				B459F6FF29C747DB003A2FF2 /* InfoTVC */,
+				B459F6FE29C747D2003A2FF2 /* PhotoTVC */,
+			);
+			path = EditProfileCells;
+			sourceTree = "<group>";
+		};
+		B459F6FE29C747D2003A2FF2 /* PhotoTVC */ = {
+			isa = PBXGroup;
+			children = (
+				B459F70029C747F3003A2FF2 /* PhotoTVC.swift */,
+				B459F70129C747F3003A2FF2 /* PhotoTVC.xib */,
+			);
+			path = PhotoTVC;
+			sourceTree = "<group>";
+		};
+		B459F6FF29C747DB003A2FF2 /* InfoTVC */ = {
+			isa = PBXGroup;
+			children = (
+				B459F70429C74DA9003A2FF2 /* InfoTVC.swift */,
+				B459F70529C74DA9003A2FF2 /* InfoTVC.xib */,
+			);
+			path = InfoTVC;
+			sourceTree = "<group>";
+		};
 		B464408729C1FB08009BCACB /* EpisodeCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +343,7 @@
 		B4A5762129C0E7D400F33CB9 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				B459F6F329C741F5003A2FF2 /* Constants */,
 				B4A5762429C0E7F600F33CB9 /* Helpers */,
 				B4A5762329C0E7F100F33CB9 /* Extensions */,
 			);
@@ -303,6 +367,8 @@
 				B441B17529C36ACB002FF490 /* UIColor + Extensions.swift */,
 				B441B18C29C4B6DA002FF490 /* UIApplication + Extension.swift */,
 				B441B19029C4C071002FF490 /* String + Extension.swift */,
+				B459F6FB29C7469C003A2FF2 /* UITableView + Extension.swift */,
+				B459F70A29C76A20003A2FF2 /* UIImage + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -395,6 +461,7 @@
 		B4A5764329C0F8FE00F33CB9 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				B459F6F629C74500003A2FF2 /* EditProfileVC */,
 				B441B18229C498B2002FF490 /* AppIconVC */,
 				B441B17729C37607002FF490 /* ProfileCells */,
 				B441B17129C35F35002FF490 /* ProfileViewController.swift */,
@@ -507,9 +574,11 @@
 				B441B18B29C4A624002FF490 /* AppIconTVC.xib in Resources */,
 				B441B18129C37BEF002FF490 /* AppearanceCVC.xib in Resources */,
 				B4E8CFB229C1EFFF0005CDC5 /* SingleCharacterCVC.xib in Resources */,
+				B459F70729C74DA9003A2FF2 /* InfoTVC.xib in Resources */,
 				B441B17C29C37633002FF490 /* ProfilePhotoCVC.xib in Resources */,
 				B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */,
 				B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */,
+				B459F70329C747F3003A2FF2 /* PhotoTVC.xib in Resources */,
 				B4A5761529C0E61600F33CB9 /* Assets.xcassets in Resources */,
 				B464409529C20D24009BCACB /* WelcomeHeader.xib in Resources */,
 			);
@@ -564,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B459F6FA29C74576003A2FF2 /* EditProfileViewModel.swift in Sources */,
 				B464408A29C1FB1B009BCACB /* EpisodeCVC.swift in Sources */,
 				B4A5763A29C0F1EF00F33CB9 /* LocationRequestModel.swift in Sources */,
 				B441B16A29C35CFA002FF490 /* EpisodesViewController.swift in Sources */,
@@ -589,16 +659,22 @@
 				B4A5765829C103C500F33CB9 /* ReusableView.swift in Sources */,
 				B441B17029C35E94002FF490 /* LocationsViewModel.swift in Sources */,
 				B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */,
+				B459F6F529C74205003A2FF2 /* AppConstants.swift in Sources */,
 				B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */,
+				B459F6FC29C7469C003A2FF2 /* UITableView + Extension.swift in Sources */,
+				B459F70B29C76A20003A2FF2 /* UIImage + Extension.swift in Sources */,
+				B459F6F829C74524003A2FF2 /* EditProfileViewController.swift in Sources */,
 				B4A5760C29C0E61500F33CB9 /* AppDelegate.swift in Sources */,
 				B441B19129C4C071002FF490 /* String + Extension.swift in Sources */,
 				B4E8CFAC29C1EF410005CDC5 /* CharacterCVC.swift in Sources */,
 				B4A5764C29C0FA7200F33CB9 /* UIViewController + Extension.swift in Sources */,
 				B4A5764629C0F91A00F33CB9 /* BaseVC.swift in Sources */,
 				B441B18A29C4A624002FF490 /* AppIconTVC.swift in Sources */,
+				B459F70229C747F3003A2FF2 /* PhotoTVC.swift in Sources */,
 				B441B18D29C4B6DA002FF490 /* UIApplication + Extension.swift in Sources */,
 				B441B17B29C37633002FF490 /* ProfilePhotoCVC.swift in Sources */,
 				B441B18029C37BEF002FF490 /* AppearanceCVC.swift in Sources */,
+				B459F70629C74DA9003A2FF2 /* InfoTVC.swift in Sources */,
 				B4A5763829C0F0DC00F33CB9 /* EpisodeResponseModel.swift in Sources */,
 				B4E8CFB129C1EFFF0005CDC5 /* SingleCharacterCVC.swift in Sources */,
 				B441B18F29C4B817002FF490 /* AppIconManager.swift in Sources */,
@@ -748,12 +824,14 @@
 				DEVELOPMENT_TEAM = FKYKQ78NXT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RickAndMorty-Combine/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) wants to use camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) wants to access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,12 +860,14 @@
 				DEVELOPMENT_TEAM = FKYKQ78NXT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RickAndMorty-Combine/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) wants to use camera";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "$(PRODUCT_NAME) wants to access photo library";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

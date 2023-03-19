@@ -13,6 +13,7 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(named: "BGColor")
+        self.navigationController?.title = "Characters"
     }
 }
 
