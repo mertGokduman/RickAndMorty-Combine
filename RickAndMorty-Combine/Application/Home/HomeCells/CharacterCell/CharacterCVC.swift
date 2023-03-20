@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol CharacterCVCDelegate: AnyObject {
+    func viewAllTapped(type: CharacterCVCType)
+}
+
+enum CharacterCVCType {
+    case character
+    case location
+}
+
 class CharacterCVC: UICollectionViewCell {
+
+    weak var delegate: CharacterCVCDelegate?
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnViewAll: UIButton!
@@ -27,6 +38,7 @@ class CharacterCVC: UICollectionViewCell {
         }
     }
 
+    lazy var type: CharacterCVCType = .character
     lazy var characterArray: [Any] = []
     
     override func awakeFromNib() {
@@ -35,6 +47,10 @@ class CharacterCVC: UICollectionViewCell {
 
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        btnViewAll.addTarget(self,
+                             action: #selector(btnViewAllTapped),
+                             for: .touchUpInside)
     }
 
     func fillCell(with model: Any?,
@@ -42,11 +58,21 @@ class CharacterCVC: UICollectionViewCell {
         lblTitle.text = title
         if let characters = model as? [Character] {
             self.characterArray = Array(characters.prefix(5))
+            self.type = .character
             collectionView.reloadData()
         } else if let locations = model as? [Location] {
             self.characterArray = Array(locations.prefix(5))
+            self.type = .location
             collectionView.reloadData()
         }
+    }
+
+    @objc private func btnViewAllTapped() {
+        delegate?.viewAllTapped(type: self.type)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 }
 

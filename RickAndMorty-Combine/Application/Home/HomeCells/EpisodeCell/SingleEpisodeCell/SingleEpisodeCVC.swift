@@ -45,7 +45,11 @@ class SingleEpisodeCVC: UICollectionViewCell {
 
     func fillCell(with item: Any) {
         if let episode = item as? Episode {
-            lblEpisode.text = episode.name~ + "(" + episode.episode~ + ")"
+            lblEpisode.text = episode.episode~ + "-" + episode.name~
         }
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 }

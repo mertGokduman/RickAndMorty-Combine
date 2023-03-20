@@ -13,7 +13,7 @@ enum ProfileCollectionViewType {
     case appIcon
 }
 
-class ProfileViewController: BaseVC<LocationViewModel> {
+class ProfileViewController: BaseVC<ProfileViewModel> {
 
     private lazy var collectionViewFlowLayout: UICollectionViewFlowLayout = {
         let flowLayout = UICollectionViewFlowLayout()

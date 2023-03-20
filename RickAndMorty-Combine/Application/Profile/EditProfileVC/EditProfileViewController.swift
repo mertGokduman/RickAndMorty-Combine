@@ -117,6 +117,7 @@ class EditProfileViewController: BaseVC<EditProfileViewModel> {
     // MARK: - Save Button Function
     @objc private func btnSaveTapped() {
         if let profileImage = self.viewModel.profilePicture {
+            UserDefaults.standard.removeObject(forKey: AppConstants.UserDefaultsConstants.profilePicture)
             profileImage.saveImageToUserDefaults()
         }
 

@@ -23,5 +23,6 @@ struct ServiceConstants {
 
     struct QueryPaths {
         static let page = "?page="
+        static let name = "?name="
     }
 }

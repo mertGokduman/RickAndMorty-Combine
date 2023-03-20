@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol EpisodeCVCDelegate: AnyObject {
+    func viewAllTapped()
+}
+
 class EpisodeCVC: UICollectionViewCell {
+
+    weak var delegate: EpisodeCVCDelegate?
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var btnViewAll: UIButton!
@@ -33,6 +39,10 @@ class EpisodeCVC: UICollectionViewCell {
         // Initialization code
         collectionView.delegate = self
         collectionView.dataSource = self
+
+        btnViewAll.addTarget(self,
+                             action: #selector(btnViewAllTapped),
+                             for: .touchUpInside)
     }
 
     func fillCell(with model: Any?,
@@ -42,6 +52,14 @@ class EpisodeCVC: UICollectionViewCell {
             self.episodeArray = Array(episodes.prefix(5))
             collectionView.reloadData()
         }
+    }
+
+    @objc private func btnViewAllTapped() {
+        delegate?.viewAllTapped()
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
     }
 }
 

@@ -37,7 +37,7 @@ class HomeViewController: BaseVC<HomeViewModel> {
 
     var typeArray: [HomeCollectionViewType] = [.characters, .episodes, .locations]
 
-    var headerView: WelcomeHeader?
+    weak var headerView: WelcomeHeader?
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -149,10 +149,12 @@ extension HomeViewController: UICollectionViewDataSource {
                                                                 for: indexPath) as? CharacterCVC else { return UICollectionViewCell() }
             cell.fillCell(with: viewModel.characters?.shuffled(),
                           title: "Characters")
+            cell.delegate = self
             return cell
         case .episodes:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EpisodeCVC",
                                                                 for: indexPath) as? EpisodeCVC else { return UICollectionViewCell() }
+            cell.delegate = self
             cell.fillCell(with: viewModel.episodes?.shuffled(),
                           title: "Episodes")
             return cell
@@ -161,6 +163,7 @@ extension HomeViewController: UICollectionViewDataSource {
                                                                 for: indexPath) as? CharacterCVC else { return UICollectionViewCell() }
             cell.fillCell(with: viewModel.locations?.shuffled(),
                           title: "Locations")
+            cell.delegate = self
             return cell
         }
     }
@@ -244,6 +247,27 @@ extension HomeViewController: UIScrollViewDelegate {
 extension HomeViewController: WelcomeHeaderDelegate {
     func profileImageTapped() {
         self.tabBarController?.selectedIndex = 4
+    }
+}
+
+// MARK: - CharacterCVCDelegate
+extension HomeViewController: CharacterCVCDelegate {
+
+    func viewAllTapped(type: CharacterCVCType) {
+        switch type {
+        case .character:
+            self.tabBarController?.selectedIndex = 0
+        case .location:
+            self.tabBarController?.selectedIndex = 3
+        }
+    }
+}
+
+// MARK: - EpisodeCVCDelegate
+extension HomeViewController: EpisodeCVCDelegate {
+
+    func viewAllTapped() {
+        self.tabBarController?.selectedIndex = 1
     }
 }
 

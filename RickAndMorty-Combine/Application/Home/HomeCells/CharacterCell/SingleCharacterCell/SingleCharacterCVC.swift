@@ -55,4 +55,8 @@ class SingleCharacterCVC: UICollectionViewCell {
             imgCharacter.image = UIImage(named: "locationBG")
         }
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }

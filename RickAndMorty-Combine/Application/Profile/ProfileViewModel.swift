@@ -9,7 +9,7 @@ import Foundation
 import Combine
 import UIKit
 
-final class LocationViewModel: BaseViewModel {
+final class ProfileViewModel: BaseViewModel {
 
     @Published var profilePicture: UIImage?
     var name: String = ""

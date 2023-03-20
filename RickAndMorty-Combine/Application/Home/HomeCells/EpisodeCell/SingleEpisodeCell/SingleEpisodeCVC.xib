@@ -21,10 +21,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="180" height="150"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pql-ib-wxg">
-                        <rect key="frame" x="0.0" y="110" width="180" height="40"/>
+                        <rect key="frame" x="0.0" y="100" width="180" height="50"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C9-sM-8Pj">
-                                <rect key="frame" x="10" y="0.0" width="160" height="40"/>
+                                <rect key="frame" x="10" y="0.0" width="160" height="50"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                             <constraint firstItem="2C9-sM-8Pj" firstAttribute="centerY" secondItem="Pql-ib-wxg" secondAttribute="centerY" id="9LL-CV-QNK"/>
                             <constraint firstAttribute="trailing" secondItem="2C9-sM-8Pj" secondAttribute="trailing" constant="10" id="IdG-ev-Ih2"/>
                             <constraint firstItem="2C9-sM-8Pj" firstAttribute="leading" secondItem="Pql-ib-wxg" secondAttribute="leading" constant="10" id="d93-9D-6sU"/>
-                            <constraint firstAttribute="height" constant="40" id="qeZ-op-JDi"/>
+                            <constraint firstAttribute="height" constant="50" id="qeZ-op-JDi"/>
                             <constraint firstAttribute="bottom" secondItem="2C9-sM-8Pj" secondAttribute="bottom" id="rYU-6c-tW4"/>
                         </constraints>
                     </view>

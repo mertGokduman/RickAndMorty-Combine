@@ -59,4 +59,8 @@ class ProfilePhotoCVC: UICollectionViewCell {
     @objc private func btnEditTapped() {
         delegate?.btnEditPressed()
     }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
 }
