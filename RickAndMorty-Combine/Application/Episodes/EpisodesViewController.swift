@@ -40,6 +40,8 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.tabBarController?.tabBar.isHidden = false
+        self.btnAddShow()
         viewModel.getEpisodes(isPagination: false)
     }
 

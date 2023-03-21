@@ -40,6 +40,8 @@ class LocationsViewController: BaseVC<LocationsViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.tabBarController?.tabBar.isHidden = false
+        self.btnAddShow()
         viewModel.getLocations(isPagination: false)
     }
 

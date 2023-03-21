@@ -9,6 +9,8 @@ import UIKit
 
 protocol CharacterCVCDelegate: AnyObject {
     func viewAllTapped(type: CharacterCVCType)
+    func characterTapped(characterID: Int?)
+    func locationTapped(locationId: Int?)
 }
 
 enum CharacterCVCType {
@@ -39,7 +41,7 @@ class CharacterCVC: UICollectionViewCell {
     }
 
     lazy var type: CharacterCVCType = .character
-    lazy var characterArray: [Any] = []
+    lazy var dataArray: [Any] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -57,11 +59,11 @@ class CharacterCVC: UICollectionViewCell {
                   title: String) {
         lblTitle.text = title
         if let characters = model as? [Character] {
-            self.characterArray = Array(characters.prefix(5))
+            self.dataArray = Array(characters.prefix(5))
             self.type = .character
             collectionView.reloadData()
         } else if let locations = model as? [Location] {
-            self.characterArray = Array(locations.prefix(5))
+            self.dataArray = Array(locations.prefix(5))
             self.type = .location
             collectionView.reloadData()
         }
@@ -81,14 +83,14 @@ extension CharacterCVC: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
-        return characterArray.count
+        return dataArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SingleCharacterCVC",
                                                             for: indexPath) as? SingleCharacterCVC else { return UICollectionViewCell() }
-        cell.fillCell(with: characterArray[indexPath.row])
+        cell.fillCell(with: dataArray[indexPath.row])
         return cell
     }
 }
@@ -96,4 +98,12 @@ extension CharacterCVC: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension CharacterCVC: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        if let characterArray = dataArray as? [Character] {
+            delegate?.characterTapped(characterID: characterArray[indexPath.row].id)
+        } else if let locationArray = dataArray as? [Location] {
+            delegate?.locationTapped(locationId: locationArray[indexPath.row].id)
+        }
+    }
 }

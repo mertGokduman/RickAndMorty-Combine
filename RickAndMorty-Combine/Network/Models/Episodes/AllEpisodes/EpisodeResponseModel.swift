@@ -29,9 +29,10 @@ struct Episode: Codable {
     var name: String?
     var airDate: String?
     var episode: String?
+    var characters: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, episode
+        case id, name, episode, characters
         case airDate = "air_date"
     }
 
@@ -41,5 +42,6 @@ struct Episode: Codable {
         name = try? values.decode(String.self, forKey: .name)
         airDate = try? values.decode(String.self, forKey: .airDate)
         episode = try? values.decode(String.self, forKey: .episode)
+        characters = try? values.decode([String].self, forKey: .characters)
     }
 }

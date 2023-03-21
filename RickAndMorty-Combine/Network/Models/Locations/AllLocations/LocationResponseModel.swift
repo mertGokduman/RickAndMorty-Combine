@@ -29,9 +29,10 @@ struct Location: Codable {
     var name: String?
     var type: String?
     var dimension: String?
+    var characters: [String]?
 
     enum CodingKeys: String, CodingKey {
-        case id, name, type, dimension
+        case id, name, type, dimension, characters
     }
 
     init(from decoder: Decoder) throws {
@@ -40,5 +41,6 @@ struct Location: Codable {
         name = try? values.decode(String.self, forKey: .name)
         type = try? values.decode(String.self, forKey: .type)
         dimension = try? values.decode(String.self, forKey: .dimension)
+        characters = try? values.decode([String].self, forKey: .characters)
     }
 }

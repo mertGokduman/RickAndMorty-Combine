@@ -35,7 +35,7 @@ class HomeViewController: BaseVC<HomeViewModel> {
         return collectionView
     }()
 
-    var typeArray: [HomeCollectionViewType] = [.characters, .episodes, .locations]
+    lazy var typeArray: [HomeCollectionViewType] = [.characters, .episodes, .locations]
 
     weak var headerView: WelcomeHeader?
 
@@ -43,7 +43,8 @@ class HomeViewController: BaseVC<HomeViewModel> {
         super.viewWillAppear(animated)
 
         navigationController?.setNavigationBarHidden(true, animated: false)
-
+        self.tabBarController?.tabBar.isHidden = false
+        self.btnAddShow()
         viewModel.getDatas()
     }
 
@@ -260,6 +261,18 @@ extension HomeViewController: CharacterCVCDelegate {
         case .location:
             self.tabBarController?.selectedIndex = 3
         }
+    }
+
+    func characterTapped(characterID: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .character(characterID~)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+    func locationTapped(locationId: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .location(locationId~)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

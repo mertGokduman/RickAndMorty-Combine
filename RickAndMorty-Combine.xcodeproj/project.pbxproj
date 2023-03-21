@@ -65,6 +65,18 @@
 		B4A5765229C0FCA600F33CB9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5765129C0FCA600F33CB9 /* HomeViewController.swift */; };
 		B4A5765429C103A700F33CB9 /* UICollectionView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5765329C103A700F33CB9 /* UICollectionView + Extensions.swift */; };
 		B4A5765829C103C500F33CB9 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A5765729C103C500F33CB9 /* ReusableView.swift */; };
+		B4B03D4929C9D54600ADB5B3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D4829C9D54600ADB5B3 /* DetailViewController.swift */; };
+		B4B03D4B29C9D55200ADB5B3 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D4A29C9D55200ADB5B3 /* DetailViewModel.swift */; };
+		B4B03D5029C9D6FD00ADB5B3 /* CharacterDetailCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D4E29C9D6FD00ADB5B3 /* CharacterDetailCVC.swift */; };
+		B4B03D5129C9D6FD00ADB5B3 /* CharacterDetailCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B03D4F29C9D6FD00ADB5B3 /* CharacterDetailCVC.xib */; };
+		B4B03D5329C9DA5100ADB5B3 /* DetailDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D5229C9DA5100ADB5B3 /* DetailDataView.swift */; };
+		B4B03D5829C9E6B800ADB5B3 /* SingleCharacterRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D5729C9E6B800ADB5B3 /* SingleCharacterRequestModel.swift */; };
+		B4B03D5B29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D5A29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift */; };
+		B4B03D5E29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D5D29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift */; };
+		B4B03D6229C9F47500ADB5B3 /* DropDownCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D6029C9F47500ADB5B3 /* DropDownCVC.swift */; };
+		B4B03D6329C9F47500ADB5B3 /* DropDownCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */; };
+		B4B03D6629C9F68600ADB5B3 /* DropDownDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D6429C9F68600ADB5B3 /* DropDownDetailTVC.swift */; };
+		B4B03D6729C9F68600ADB5B3 /* DropDownDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B03D6529C9F68600ADB5B3 /* DropDownDetailTVC.xib */; };
 		B4E8CFAC29C1EF410005CDC5 /* CharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8CFAA29C1EF410005CDC5 /* CharacterCVC.swift */; };
 		B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E8CFAB29C1EF410005CDC5 /* CharacterCVC.xib */; };
 		B4E8CFB129C1EFFF0005CDC5 /* SingleCharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8CFAF29C1EFFF0005CDC5 /* SingleCharacterCVC.swift */; };
@@ -135,6 +147,18 @@
 		B4A5765129C0FCA600F33CB9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B4A5765329C103A700F33CB9 /* UICollectionView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + Extensions.swift"; sourceTree = "<group>"; };
 		B4A5765729C103C500F33CB9 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		B4B03D4829C9D54600ADB5B3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B4B03D4A29C9D55200ADB5B3 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		B4B03D4E29C9D6FD00ADB5B3 /* CharacterDetailCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCVC.swift; sourceTree = "<group>"; };
+		B4B03D4F29C9D6FD00ADB5B3 /* CharacterDetailCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterDetailCVC.xib; sourceTree = "<group>"; };
+		B4B03D5229C9DA5100ADB5B3 /* DetailDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDataView.swift; sourceTree = "<group>"; };
+		B4B03D5729C9E6B800ADB5B3 /* SingleCharacterRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterRequestModel.swift; sourceTree = "<group>"; };
+		B4B03D5A29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleEpisodeRequestModel.swift; sourceTree = "<group>"; };
+		B4B03D5D29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleLocationRequestModel.swift; sourceTree = "<group>"; };
+		B4B03D6029C9F47500ADB5B3 /* DropDownCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCVC.swift; sourceTree = "<group>"; };
+		B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCVC.xib; sourceTree = "<group>"; };
+		B4B03D6429C9F68600ADB5B3 /* DropDownDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownDetailTVC.swift; sourceTree = "<group>"; };
+		B4B03D6529C9F68600ADB5B3 /* DropDownDetailTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownDetailTVC.xib; sourceTree = "<group>"; };
 		B4E8CFAA29C1EF410005CDC5 /* CharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCVC.swift; sourceTree = "<group>"; };
 		B4E8CFAB29C1EF410005CDC5 /* CharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCVC.xib; sourceTree = "<group>"; };
 		B4E8CFAF29C1EFFF0005CDC5 /* SingleCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterCVC.swift; sourceTree = "<group>"; };
@@ -297,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				B467F31D29C880DF0008E129 /* SearchView */,
+				B4B03D5529C9DA6000ADB5B3 /* DetailDataView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -361,6 +386,7 @@
 				B4A5764229C0F8E800F33CB9 /* Episodes */,
 				B4A5764129C0F8E200F33CB9 /* Locations */,
 				B4A5764329C0F8FE00F33CB9 /* Profile */,
+				B4B03D4729C9D51200ADB5B3 /* Detail */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -422,6 +448,7 @@
 		B4A5762A29C0E92300F33CB9 /* Characters */ = {
 			isa = PBXGroup;
 			children = (
+				B4B03D5629C9E6A700ADB5B3 /* SingleCharacter */,
 				B4F3BAEA29C893FA002A8815 /* SearchCharacters */,
 				B4F3BAE929C893F4002A8815 /* AllCharacters */,
 			);
@@ -431,6 +458,7 @@
 		B4A5762B29C0E95300F33CB9 /* Episodes */ = {
 			isa = PBXGroup;
 			children = (
+				B4B03D5929C9E72500ADB5B3 /* SingleEpisode */,
 				B4F3BAF529C8AC50002A8815 /* SearchEpisodes */,
 				B4F3BAF429C8AC4B002A8815 /* AllEpisodes */,
 			);
@@ -440,6 +468,7 @@
 		B4A5762C29C0E95800F33CB9 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
+				B4B03D5C29C9E7B900ADB5B3 /* SingleLocation */,
 				B4F3BAF129C8A94F002A8815 /* SearchLocation */,
 				B4F3BAF029C8A948002A8815 /* AllLocations */,
 			);
@@ -523,6 +552,85 @@
 				B4E8CFAB29C1EF410005CDC5 /* CharacterCVC.xib */,
 			);
 			path = CharacterCell;
+			sourceTree = "<group>";
+		};
+		B4B03D4729C9D51200ADB5B3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D4C29C9D6DB00ADB5B3 /* DetailCells */,
+				B4B03D4829C9D54600ADB5B3 /* DetailViewController.swift */,
+				B4B03D4A29C9D55200ADB5B3 /* DetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B4B03D4C29C9D6DB00ADB5B3 /* DetailCells */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D5F29C9F45A00ADB5B3 /* DropDownCell */,
+				B4B03D4D29C9D6E200ADB5B3 /* DetailCell */,
+			);
+			path = DetailCells;
+			sourceTree = "<group>";
+		};
+		B4B03D4D29C9D6E200ADB5B3 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D4E29C9D6FD00ADB5B3 /* CharacterDetailCVC.swift */,
+				B4B03D4F29C9D6FD00ADB5B3 /* CharacterDetailCVC.xib */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
+		B4B03D5529C9DA6000ADB5B3 /* DetailDataView */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D5229C9DA5100ADB5B3 /* DetailDataView.swift */,
+			);
+			path = DetailDataView;
+			sourceTree = "<group>";
+		};
+		B4B03D5629C9E6A700ADB5B3 /* SingleCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D5729C9E6B800ADB5B3 /* SingleCharacterRequestModel.swift */,
+			);
+			path = SingleCharacter;
+			sourceTree = "<group>";
+		};
+		B4B03D5929C9E72500ADB5B3 /* SingleEpisode */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D5A29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift */,
+			);
+			path = SingleEpisode;
+			sourceTree = "<group>";
+		};
+		B4B03D5C29C9E7B900ADB5B3 /* SingleLocation */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D5D29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift */,
+			);
+			path = SingleLocation;
+			sourceTree = "<group>";
+		};
+		B4B03D5F29C9F45A00ADB5B3 /* DropDownCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D6029C9F47500ADB5B3 /* DropDownCVC.swift */,
+				B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */,
+				B4B03D6829C9F68B00ADB5B3 /* DropDownDetailCell */,
+			);
+			path = DropDownCell;
+			sourceTree = "<group>";
+		};
+		B4B03D6829C9F68B00ADB5B3 /* DropDownDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4B03D6429C9F68600ADB5B3 /* DropDownDetailTVC.swift */,
+				B4B03D6529C9F68600ADB5B3 /* DropDownDetailTVC.xib */,
+			);
+			path = DropDownDetailCell;
 			sourceTree = "<group>";
 		};
 		B4E8CFAE29C1EFE30005CDC5 /* SingleCharacterCell */ = {
@@ -648,12 +756,15 @@
 				B4A5761829C0E61600F33CB9 /* LaunchScreen.storyboard in Resources */,
 				B464409029C1FC59009BCACB /* SingleEpisodeCVC.xib in Resources */,
 				B441B18B29C4A624002FF490 /* AppIconTVC.xib in Resources */,
+				B4B03D6729C9F68600ADB5B3 /* DropDownDetailTVC.xib in Resources */,
+				B4B03D6329C9F47500ADB5B3 /* DropDownCVC.xib in Resources */,
 				B441B18129C37BEF002FF490 /* AppearanceCVC.xib in Resources */,
 				B4E8CFB229C1EFFF0005CDC5 /* SingleCharacterCVC.xib in Resources */,
 				B459F70729C74DA9003A2FF2 /* InfoTVC.xib in Resources */,
 				B441B17C29C37633002FF490 /* ProfilePhotoCVC.xib in Resources */,
 				B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */,
 				B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */,
+				B4B03D5129C9D6FD00ADB5B3 /* CharacterDetailCVC.xib in Resources */,
 				B459F70329C747F3003A2FF2 /* PhotoTVC.xib in Resources */,
 				B4A5761529C0E61600F33CB9 /* Assets.xcassets in Resources */,
 				B464409529C20D24009BCACB /* WelcomeHeader.xib in Resources */,
@@ -716,6 +827,7 @@
 				B441B17629C36ACB002FF490 /* UIColor + Extensions.swift in Sources */,
 				B441B16C29C35D02002FF490 /* EpisodeViewModel.swift in Sources */,
 				B4A5765429C103A700F33CB9 /* UICollectionView + Extensions.swift in Sources */,
+				B4B03D5829C9E6B800ADB5B3 /* SingleCharacterRequestModel.swift in Sources */,
 				B4A5765029C0FC1A00F33CB9 /* HomeViewModel.swift in Sources */,
 				B441B17229C35F35002FF490 /* ProfileViewController.swift in Sources */,
 				B441B18429C498CA002FF490 /* AppIconViewController.swift in Sources */,
@@ -724,11 +836,14 @@
 				B4A5762929C0E83E00F33CB9 /* RequestModel.swift in Sources */,
 				B4A5765229C0FCA600F33CB9 /* HomeViewController.swift in Sources */,
 				B4F3BAF729C8AC60002A8815 /* SearchEpisodesRequestModel.swift in Sources */,
+				B4B03D5329C9DA5100ADB5B3 /* DetailDataView.swift in Sources */,
 				B4A5764829C0F92400F33CB9 /* BaseViewModel.swift in Sources */,
+				B4B03D5029C9D6FD00ADB5B3 /* CharacterDetailCVC.swift in Sources */,
 				B441B16E29C35E80002FF490 /* LocationsViewController.swift in Sources */,
 				B464409429C20D24009BCACB /* WelcomeHeader.swift in Sources */,
 				B441B16829C35BC0002FF490 /* CharacterViewModel.swift in Sources */,
 				B4F3BAEC29C8940B002A8815 /* SearchCharactersRequestModel.swift in Sources */,
+				B4B03D4929C9D54600ADB5B3 /* DetailViewController.swift in Sources */,
 				B4A5763C29C0F2BB00F33CB9 /* LocationResponseModel.swift in Sources */,
 				B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */,
 				B4A5762729C0E82700F33CB9 /* NetworkManager.swift in Sources */,
@@ -739,12 +854,15 @@
 				B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */,
 				B4F3BAF329C8A95E002A8815 /* SearchLocationRequestModel.swift in Sources */,
 				B459F6F529C74205003A2FF2 /* AppConstants.swift in Sources */,
+				B4B03D4B29C9D55200ADB5B3 /* DetailViewModel.swift in Sources */,
+				B4B03D6629C9F68600ADB5B3 /* DropDownDetailTVC.swift in Sources */,
 				B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */,
 				B459F6FC29C7469C003A2FF2 /* UITableView + Extension.swift in Sources */,
 				B459F70B29C76A20003A2FF2 /* UIImage + Extension.swift in Sources */,
 				B459F6F829C74524003A2FF2 /* EditProfileViewController.swift in Sources */,
 				B4A5760C29C0E61500F33CB9 /* AppDelegate.swift in Sources */,
 				B441B19129C4C071002FF490 /* String + Extension.swift in Sources */,
+				B4B03D6229C9F47500ADB5B3 /* DropDownCVC.swift in Sources */,
 				B4E8CFAC29C1EF410005CDC5 /* CharacterCVC.swift in Sources */,
 				B4A5764C29C0FA7200F33CB9 /* UIViewController + Extension.swift in Sources */,
 				B4A5764629C0F91A00F33CB9 /* BaseVC.swift in Sources */,
@@ -753,6 +871,8 @@
 				B467F31F29C880F20008E129 /* SearchView.swift in Sources */,
 				B441B18D29C4B6DA002FF490 /* UIApplication + Extension.swift in Sources */,
 				B441B17B29C37633002FF490 /* ProfilePhotoCVC.swift in Sources */,
+				B4B03D5B29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift in Sources */,
+				B4B03D5E29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift in Sources */,
 				B441B18029C37BEF002FF490 /* AppearanceCVC.swift in Sources */,
 				B459F70629C74DA9003A2FF2 /* InfoTVC.swift in Sources */,
 				B4A5763829C0F0DC00F33CB9 /* EpisodeResponseModel.swift in Sources */,

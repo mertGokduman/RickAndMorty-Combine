@@ -41,6 +41,8 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.tabBarController?.tabBar.isHidden = false
+        self.btnAddShow()
         viewModel.getCharacters(isPagination: false)
     }
 
@@ -85,8 +87,6 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
         ])
 
         self.setupCollectionView()
-
-        self.collectionView.reloadData()
     }
 
     // MARK: - COLLECTIONVIEW SETUPS
