@@ -10,7 +10,7 @@ import UIKit
 class DropDownDetailTVC: UITableViewCell {
 
     static let identifier = "DropDownDetailTVC"
-    static let rowHeight: CGFloat = 60
+    static let rowHeight: CGFloat = 50
 
     @IBOutlet weak var lblTitle: UILabel!
 
@@ -24,5 +24,8 @@ class DropDownDetailTVC: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
+    func fillCell(with title: String?) {
+        lblTitle.text = title
+    }
 }

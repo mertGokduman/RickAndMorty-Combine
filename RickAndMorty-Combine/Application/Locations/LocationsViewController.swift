@@ -37,6 +37,8 @@ class LocationsViewController: BaseVC<LocationsViewModel> {
         return collectionView
     }()
 
+    lazy var isSearching: Bool = false
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -53,6 +55,7 @@ class LocationsViewController: BaseVC<LocationsViewModel> {
 
         setupUI()
         bind()
+        makeViewDismissKeyboard(cancelsTouchesInView: false)
     }
 
     // MARK: - BIND
@@ -100,6 +103,12 @@ class LocationsViewController: BaseVC<LocationsViewModel> {
         let nibs = [SingleCharacterCVC.self]
         collectionView.registerNibs(withClassesAndIdentifiers: nibs)
     }
+
+    private func routeToDetailVC(locationID: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .location(locationID~)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -126,16 +135,16 @@ extension LocationsViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-
+        self.routeToDetailVC(locationID: viewModel.locations?[indexPath.row].id)
     }
 
-//    func collectionView(_ collectionView: UICollectionView,
-//                        willDisplay cell: UICollectionViewCell,
-//                        forItemAt indexPath: IndexPath) {
-//        if indexPath.row == (viewModel.locations?.count ?? 0) - 1 && (viewModel.locations?.count ?? 0) < viewModel.count {
-//            viewModel.getLocations(isPagination: true)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if indexPath.row == (viewModel.locations?.count ?? 0) - 1 && (viewModel.locations?.count ?? 0) < viewModel.count && !isSearching {
+            viewModel.getLocations(isPagination: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -155,8 +164,10 @@ extension LocationsViewController: SearchViewDelegate {
 
     func beginEditing(text: String) {
         if text != "" {
+            self.isSearching = true
             viewModel.searchlocations(searchText: text)
         } else {
+            self.isSearching = false
             viewModel.page = 1
             viewModel.getLocations(isPagination: false)
         }

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		8B5FAF4B21A9F1320B3D8AA2 /* Pods_RickAndMorty_Combine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA2A57303C99229C26991BC4 /* Pods_RickAndMorty_Combine.framework */; };
 		B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41E543029C2183B00F88DE1 /* SafeUnwrap.swift */; };
+		B439110029CB479000D465B1 /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43910FF29CB479000D465B1 /* Int + Extension.swift */; };
+		B439110229CC996200D465B1 /* TextHeightWidthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439110129CC996200D465B1 /* TextHeightWidthHelper.swift */; };
+		B439110529CCAFF300D465B1 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B439110429CCAFF300D465B1 /* loading.json */; };
+		B439110729CCB1BA00D465B1 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B439110629CCB1BA00D465B1 /* UIView + Extension.swift */; };
 		B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16529C35BB4002FF490 /* CharacterViewController.swift */; };
 		B441B16829C35BC0002FF490 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16729C35BC0002FF490 /* CharacterViewModel.swift */; };
 		B441B16A29C35CFA002FF490 /* EpisodesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441B16929C35CFA002FF490 /* EpisodesViewController.swift */; };
@@ -89,6 +93,10 @@
 /* Begin PBXFileReference section */
 		AA2A57303C99229C26991BC4 /* Pods_RickAndMorty_Combine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty_Combine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41E543029C2183B00F88DE1 /* SafeUnwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeUnwrap.swift; sourceTree = "<group>"; };
+		B43910FF29CB479000D465B1 /* Int + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
+		B439110129CC996200D465B1 /* TextHeightWidthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHeightWidthHelper.swift; sourceTree = "<group>"; };
+		B439110429CCAFF300D465B1 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		B439110629CCB1BA00D465B1 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		B441B16529C35BB4002FF490 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
 		B441B16729C35BC0002FF490 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		B441B16929C35CFA002FF490 /* EpisodesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodesViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +205,14 @@
 				DA8960B59FB7FB5445915693 /* Pods-RickAndMorty-Combine.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		B439110329CCAFE100D465B1 /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				B439110429CCAFF300D465B1 /* loading.json */,
+			);
+			path = LottieFiles;
 			sourceTree = "<group>";
 		};
 		B441B17729C37607002FF490 /* ProfileCells */ = {
@@ -404,6 +420,7 @@
 		B4A5762229C0E7DB00F33CB9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B439110329CCAFE100D465B1 /* LottieFiles */,
 				B4A5761429C0E61600F33CB9 /* Assets.xcassets */,
 				B4A5761629C0E61600F33CB9 /* LaunchScreen.storyboard */,
 			);
@@ -420,6 +437,8 @@
 				B441B19029C4C071002FF490 /* String + Extension.swift */,
 				B459F6FB29C7469C003A2FF2 /* UITableView + Extension.swift */,
 				B459F70A29C76A20003A2FF2 /* UIImage + Extension.swift */,
+				B43910FF29CB479000D465B1 /* Int + Extension.swift */,
+				B439110629CCB1BA00D465B1 /* UIView + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -430,6 +449,7 @@
 				B4A5765729C103C500F33CB9 /* ReusableView.swift */,
 				B41E543029C2183B00F88DE1 /* SafeUnwrap.swift */,
 				B441B18E29C4B817002FF490 /* AppIconManager.swift */,
+				B439110129CC996200D465B1 /* TextHeightWidthHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -617,9 +637,9 @@
 		B4B03D5F29C9F45A00ADB5B3 /* DropDownCell */ = {
 			isa = PBXGroup;
 			children = (
+				B4B03D6829C9F68B00ADB5B3 /* DropDownDetailCell */,
 				B4B03D6029C9F47500ADB5B3 /* DropDownCVC.swift */,
 				B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */,
-				B4B03D6829C9F68B00ADB5B3 /* DropDownDetailCell */,
 			);
 			path = DropDownCell;
 			sourceTree = "<group>";
@@ -763,6 +783,7 @@
 				B459F70729C74DA9003A2FF2 /* InfoTVC.xib in Resources */,
 				B441B17C29C37633002FF490 /* ProfilePhotoCVC.xib in Resources */,
 				B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */,
+				B439110529CCAFF300D465B1 /* loading.json in Resources */,
 				B464408B29C1FB1B009BCACB /* EpisodeCVC.xib in Resources */,
 				B4B03D5129C9D6FD00ADB5B3 /* CharacterDetailCVC.xib in Resources */,
 				B459F70329C747F3003A2FF2 /* PhotoTVC.xib in Resources */,
@@ -840,6 +861,7 @@
 				B4A5764829C0F92400F33CB9 /* BaseViewModel.swift in Sources */,
 				B4B03D5029C9D6FD00ADB5B3 /* CharacterDetailCVC.swift in Sources */,
 				B441B16E29C35E80002FF490 /* LocationsViewController.swift in Sources */,
+				B439110729CCB1BA00D465B1 /* UIView + Extension.swift in Sources */,
 				B464409429C20D24009BCACB /* WelcomeHeader.swift in Sources */,
 				B441B16829C35BC0002FF490 /* CharacterViewModel.swift in Sources */,
 				B4F3BAEC29C8940B002A8815 /* SearchCharactersRequestModel.swift in Sources */,
@@ -853,9 +875,11 @@
 				B441B17029C35E94002FF490 /* LocationsViewModel.swift in Sources */,
 				B464408F29C1FC59009BCACB /* SingleEpisodeCVC.swift in Sources */,
 				B4F3BAF329C8A95E002A8815 /* SearchLocationRequestModel.swift in Sources */,
+				B439110029CB479000D465B1 /* Int + Extension.swift in Sources */,
 				B459F6F529C74205003A2FF2 /* AppConstants.swift in Sources */,
 				B4B03D4B29C9D55200ADB5B3 /* DetailViewModel.swift in Sources */,
 				B4B03D6629C9F68600ADB5B3 /* DropDownDetailTVC.swift in Sources */,
+				B439110229CC996200D465B1 /* TextHeightWidthHelper.swift in Sources */,
 				B441B16629C35BB4002FF490 /* CharacterViewController.swift in Sources */,
 				B459F6FC29C7469C003A2FF2 /* UITableView + Extension.swift in Sources */,
 				B459F70B29C76A20003A2FF2 /* UIImage + Extension.swift in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 
 protocol EpisodeCVCDelegate: AnyObject {
     func viewAllTapped()
+    func episodeTapped(episodeID: Int?)
 }
 
 class EpisodeCVC: UICollectionViewCell {
@@ -51,6 +52,10 @@ class EpisodeCVC: UICollectionViewCell {
         if let episodes = model as? [Episode] {
             self.episodeArray = Array(episodes.prefix(5))
             collectionView.reloadData()
+            collectionView.scrollToItem(at: IndexPath(row: 0,
+                                                      section: 0),
+                                        at: .centeredHorizontally,
+                                        animated: true)
         }
     }
 
@@ -83,4 +88,8 @@ extension EpisodeCVC: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 extension EpisodeCVC: UICollectionViewDelegate {
 
+    func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        delegate?.episodeTapped(episodeID: episodeArray[indexPath.row].id)
+    }
 }

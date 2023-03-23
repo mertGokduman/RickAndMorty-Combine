@@ -20,6 +20,11 @@ final class DetailViewModel: BaseViewModel {
     @Published var episode: Episode?
     @Published var location: Location?
 
+    var episodeArray: [String] = []
+    var characters: [String] = []
+    @Published var characterEpisodes: [String]?
+    @Published var charactersNames: [String]?
+
     var count: Int? {
         switch viewType {
         case .character:
@@ -27,7 +32,7 @@ final class DetailViewModel: BaseViewModel {
         case .episode:
             return episode?.characters?.count
         case .location:
-            return episode?.characters?.count
+            return location?.residents?.count
         default:
             return 0
         }
@@ -36,9 +41,11 @@ final class DetailViewModel: BaseViewModel {
     func getData() {
         switch viewType {
         case .character(let id):
-            self.getCharacterDetail(id: id)
+            self.getCharacterDetail(id: id,
+                                    forCharacterOnly: false)
         case .episode(let id):
-            self.getEpisodeDetail(id: id)
+            self.getEpisodeDetail(id: id,
+                                  forCharacterEpisodes: false)
         case .location(let id):
             self.getLocationDetail(id: id)
         default:
@@ -47,7 +54,8 @@ final class DetailViewModel: BaseViewModel {
     }
 
     // MARK: - Character
-    private func getCharacterDetail(id: Int) {
+    private func getCharacterDetail(id: Int,
+                                    forCharacterOnly: Bool) {
         let request = SingleCharacterRequestModel(characterID: id)
         NetworkManager.shared.sendRequest(request: request,
                                           type: Character.self)
@@ -55,21 +63,51 @@ final class DetailViewModel: BaseViewModel {
 
         } receiveValue: { [weak self] character in
             guard let self = self else { return }
-            self.character = character
+            if forCharacterOnly {
+                self.characters.append(character.name~)
+                self.charactersNames = self.characters
+            } else {
+                self.character = character
+            }
         }.store(in: &cancelables)
     }
 
+    func getCharacterEpispdes(character: Character?) {
+        if let episodes = character?.episode {
+            for item in episodes {
+                let id = Int.parse(from: item)
+                self.getEpisodeDetail(id: id~,
+                                      forCharacterEpisodes: true)
+            }
+        }
+    }
+
     // MARK: - Episode
-    private func getEpisodeDetail(id: Int) {
+    private func getEpisodeDetail(id: Int,
+                                  forCharacterEpisodes: Bool) {
         let request = SingleEpisodeRequestModel(episodeID: id)
         NetworkManager.shared.sendRequest(request: request,
                                           type: Episode.self)
         .sink { _ in
-
         } receiveValue: { [weak self] episode in
             guard let self = self else { return }
-            self.episode = episode
+            if forCharacterEpisodes {
+                self.episodeArray.append(episode.name~ + "-" + episode.episode~)
+                self.characterEpisodes = self.episodeArray
+            } else {
+                self.episode = episode
+            }
         }.store(in: &cancelables)
+    }
+
+    func getEpisodeCharacters(episode: Episode?) {
+        if let characters = episode?.characters {
+            for item in characters {
+                let id = Int.parse(from: item)
+                self.getCharacterDetail(id: id~,
+                                        forCharacterOnly: true)
+            }
+        }
     }
 
     // MARK: - Location
@@ -83,5 +121,15 @@ final class DetailViewModel: BaseViewModel {
             guard let self = self else { return }
             self.location = location
         }.store(in: &cancelables)
+    }
+
+    func getLocationResidents(location: Location?) {
+        if let characters = location?.residents {
+            for item in characters {
+                let id = Int.parse(from: item)
+                self.getCharacterDetail(id: id~,
+                                        forCharacterOnly: true)
+            }
+        }
     }
 }

@@ -4,13 +4,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DropDownCVC" customModule="RickAndMorty_Combine" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DropDownCVC" id="gTV-IL-0wX" customClass="DropDownCVC" customModule="RickAndMorty_Combine" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -18,22 +19,40 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1uo-eI-omc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                        <rect key="frame" x="0.0" y="25" width="414" height="40"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tableView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episodes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9n-tt-mge">
+                        <rect key="frame" x="30" y="0.0" width="354" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="IsO-fS-v5u"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                        <color key="textColor" name="LabelColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="d9n-tt-mge" secondAttribute="trailing" constant="30" id="AiD-f7-U3b"/>
+                <constraint firstItem="d9n-tt-mge" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KkJ-nw-7ZX"/>
+                <constraint firstItem="d9n-tt-mge" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="MhM-bU-lbO"/>
                 <constraint firstAttribute="trailing" secondItem="1uo-eI-omc" secondAttribute="trailing" id="ZA9-DZ-5RP"/>
                 <constraint firstItem="1uo-eI-omc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="clg-Hn-3Zu"/>
-                <constraint firstItem="1uo-eI-omc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="lmO-Rh-13t"/>
                 <constraint firstAttribute="bottom" secondItem="1uo-eI-omc" secondAttribute="bottom" id="pWr-2e-N4x"/>
+                <constraint firstItem="1uo-eI-omc" firstAttribute="top" secondItem="d9n-tt-mge" secondAttribute="bottom" id="y0R-7w-2nq"/>
             </constraints>
             <connections>
+                <outlet property="lblTitle" destination="d9n-tt-mge" id="5ZK-Gh-TsI"/>
                 <outlet property="tableView" destination="1uo-eI-omc" id="kdW-dl-edK"/>
             </connections>
-            <point key="canvasLocation" x="-9.1603053435114496" y="19.718309859154932"/>
+            <point key="canvasLocation" x="-9.1603053435114496" y="19.366197183098592"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="LabelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

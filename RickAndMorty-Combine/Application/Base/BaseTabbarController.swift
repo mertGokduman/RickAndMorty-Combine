@@ -131,7 +131,6 @@ class BaseTabbarController: UITabBarController {
     private func addAddButton() {
         view.addSubview(btnHome)
         view.bringSubviewToFront(btnHome)
-        btnHome.layer.zPosition = 1
         btnHome.addTarget(self,
                          action: #selector(btnAddTapped),
                          for: .touchUpInside)

@@ -34,7 +34,7 @@
                         <color key="textColor" name="LabelColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0I3-zE-Ku1">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="0I3-zE-Ku1">
                         <rect key="frame" x="30" y="290" width="354" height="150"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="naB-SR-8iu">
@@ -71,6 +71,9 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Ovg-Ni-7lB"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,14 +92,14 @@
                 <constraint firstItem="Tvp-e3-rsx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="30" id="ffJ-LJ-yRo"/>
                 <constraint firstItem="0I3-zE-Ku1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="30" id="jUV-Xq-WfM"/>
                 <constraint firstItem="0I3-zE-Ku1" firstAttribute="top" secondItem="Aye-j9-O0C" secondAttribute="bottom" id="k57-J1-OEd"/>
-                <constraint firstAttribute="bottom" secondItem="0I3-zE-Ku1" secondAttribute="bottom" id="yGD-b9-3Ye"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="0I3-zE-Ku1" secondAttribute="bottom" id="yGD-b9-3Ye"/>
             </constraints>
             <connections>
-                <outlet property="LocationView" destination="RI1-Gj-QwW" id="seI-bk-0gG"/>
                 <outlet property="bottomStack" destination="MdY-Ov-ub7" id="JvI-ZV-RgZ"/>
                 <outlet property="genderView" destination="y4F-N1-aKA" id="vzd-Ic-T1e"/>
                 <outlet property="imgDetail" destination="Tvp-e3-rsx" id="44K-cd-A7z"/>
                 <outlet property="lblName" destination="Aye-j9-O0C" id="vnT-rQ-FF5"/>
+                <outlet property="locationView" destination="RI1-Gj-QwW" id="seI-bk-0gG"/>
                 <outlet property="mainStack" destination="0I3-zE-Ku1" id="sxq-N8-kpT"/>
                 <outlet property="originView" destination="kb2-ar-cyt" id="10U-jg-9aU"/>
                 <outlet property="speciesView" destination="6eO-Mu-FOT" id="6Ir-AB-lWY"/>

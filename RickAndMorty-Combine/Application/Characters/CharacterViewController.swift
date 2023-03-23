@@ -37,13 +37,13 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
         return collectionView
     }()
 
+    lazy var isSearching: Bool = false
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         self.tabBarController?.tabBar.isHidden = false
         self.btnAddShow()
-        viewModel.getCharacters(isPagination: false)
     }
 
     override func viewDidLoad() {
@@ -54,7 +54,8 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
 
         setupUI()
         bind()
-        makeViewDismissKeyboard()
+        viewModel.getCharacters(isPagination: false)
+        makeViewDismissKeyboard(cancelsTouchesInView: false)
     }
 
     // MARK: - BIND
@@ -63,6 +64,7 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
         viewModel.$characters
             .sink { _ in
                 self.collectionView.reloadData()
+                self.stopLoading()
             }.store(in: &cancelables)
     }
 
@@ -100,6 +102,12 @@ class CharacterViewController: BaseVC<CharacterViewModel> {
         let nibs = [SingleCharacterCVC.self]
         collectionView.registerNibs(withClassesAndIdentifiers: nibs)
     }
+
+    private func routeToDetailVC(characterID: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .character(characterID~)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -126,16 +134,16 @@ extension CharacterViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-
+        self.routeToDetailVC(characterID: viewModel.characters?[indexPath.row].id)
     }
 
-//    func collectionView(_ collectionView: UICollectionView,
-//                        willDisplay cell: UICollectionViewCell,
-//                        forItemAt indexPath: IndexPath) {
-//        if indexPath.row == (viewModel.characters?.count ?? 0) - 1 && (viewModel.characters?.count ?? 0) < viewModel.count {
-//            viewModel.getCharacters(isPagination: true)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if indexPath.row == (viewModel.characters?.count ?? 0) - 1 && (viewModel.characters?.count ?? 0) < viewModel.count && !isSearching {
+            viewModel.getCharacters(isPagination: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -155,8 +163,10 @@ extension CharacterViewController: SearchViewDelegate {
 
     func beginEditing(text: String) {
         if text != "" {
+            self.isSearching = true
             viewModel.searchCharacter(searchText: text)
         } else {
+            self.isSearching = false
             viewModel.page = 1
             viewModel.getCharacters(isPagination: false)
         }

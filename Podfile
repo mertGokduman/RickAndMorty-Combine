@@ -8,5 +8,6 @@ target 'RickAndMorty-Combine' do
   # Pods for RickAndMorty-Combine
 
 	pod 'Kingfisher'
+	pod 'lottie-ios'
 
 end

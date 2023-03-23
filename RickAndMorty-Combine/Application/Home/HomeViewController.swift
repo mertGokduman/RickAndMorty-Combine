@@ -39,12 +39,15 @@ class HomeViewController: BaseVC<HomeViewModel> {
 
     weak var headerView: WelcomeHeader?
 
+    var requiredResults: Int = 10
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
         navigationController?.setNavigationBarHidden(true, animated: false)
         self.tabBarController?.tabBar.isHidden = false
         self.btnAddShow()
+        self.startLoading()
         viewModel.getDatas()
     }
 
@@ -60,32 +63,50 @@ class HomeViewController: BaseVC<HomeViewModel> {
     private func bind() {
 
         viewModel.$profilePicture
-            .sink { _ in
+            .sink {  _ in
                 self.collectionView.reloadData()
+                self.requiredResults -= 1
+                self.checkRequired()
             }.store(in: &cancelables)
 
         viewModel.$name
             .sink { _ in
                 self.collectionView.reloadData()
+                self.requiredResults -= 1
+                self.checkRequired()
             }.store(in: &cancelables)
 
         viewModel.$characters
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.collectionView.reloadData()
+                self.requiredResults -= 1
+                self.checkRequired()
             }.store(in: &cancelables)
 
         viewModel.$episodes
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.collectionView.reloadData()
+                self.requiredResults -= 1
+                self.checkRequired()
             }.store(in: &cancelables)
 
         viewModel.$locations
             .sink { [weak self] _ in
                 guard let self = self else { return }
                 self.collectionView.reloadData()
+                self.requiredResults -= 1
+                self.checkRequired()
             }.store(in: &cancelables)
+    }
+
+    private func checkRequired() {
+
+        if self.requiredResults <= 0 {
+            self.stopLoading()
+            self.requiredResults = 5
+        }
     }
 
     // MARK: - SETUP UI
@@ -281,6 +302,11 @@ extension HomeViewController: EpisodeCVCDelegate {
 
     func viewAllTapped() {
         self.tabBarController?.selectedIndex = 1
+    }
+    func episodeTapped(episodeID: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .episode(episodeID~)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

@@ -62,10 +62,18 @@ class CharacterCVC: UICollectionViewCell {
             self.dataArray = Array(characters.prefix(5))
             self.type = .character
             collectionView.reloadData()
+            collectionView.scrollToItem(at: IndexPath(row: 0,
+                                                      section: 0),
+                                        at: .centeredHorizontally,
+                                        animated: true)
         } else if let locations = model as? [Location] {
             self.dataArray = Array(locations.prefix(5))
             self.type = .location
             collectionView.reloadData()
+            collectionView.scrollToItem(at: IndexPath(row: 0,
+                                                      section: 0),
+                                        at: .centeredHorizontally,
+                                        animated: true)
         }
     }
 

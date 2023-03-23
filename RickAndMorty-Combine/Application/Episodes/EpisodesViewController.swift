@@ -37,6 +37,8 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
         return collectionView
     }()
 
+    lazy var isSearching: Bool = false
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -53,6 +55,7 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
 
         setupUI()
         bind()
+        makeViewDismissKeyboard(cancelsTouchesInView: false)
     }
 
     // MARK: - BIND
@@ -100,6 +103,12 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
         let nibs = [SingleEpisodeCVC.self]
         collectionView.registerNibs(withClassesAndIdentifiers: nibs)
     }
+
+    private func routeToDetailVC(episodeID: Int?) {
+        let vc = DetailViewController()
+        vc.viewModel.viewType = .episode(episodeID~)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 // MARK: - UICollectionViewDataSource
@@ -126,16 +135,16 @@ extension EpisodesViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView,
                         didSelectItemAt indexPath: IndexPath) {
-
+        self.routeToDetailVC(episodeID: viewModel.episodes?[indexPath.row].id)
     }
 
-//    func collectionView(_ collectionView: UICollectionView,
-//                        willDisplay cell: UICollectionViewCell,
-//                        forItemAt indexPath: IndexPath) {
-//        if indexPath.row == (viewModel.locations?.count ?? 0) - 1 && (viewModel.locations?.count ?? 0) < viewModel.count {
-//            viewModel.getLocations(isPagination: true)
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView,
+                        willDisplay cell: UICollectionViewCell,
+                        forItemAt indexPath: IndexPath) {
+        if indexPath.row == (viewModel.episodes?.count ?? 0) - 1 && (viewModel.episodes?.count ?? 0) < viewModel.count && !isSearching {
+            viewModel.getEpisodes(isPagination: true)
+        }
+    }
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout
@@ -155,8 +164,10 @@ extension EpisodesViewController: SearchViewDelegate {
 
     func beginEditing(text: String) {
         if text != "" {
+            self.isSearching = true
             viewModel.searchEpisodes(searchText: text)
         } else {
+            self.isSearching = false
             viewModel.page = 1
             viewModel.getEpisodes(isPagination: false)
         }

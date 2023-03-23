@@ -19,6 +19,7 @@ class DetailViewController: BaseVC<DetailViewModel> {
         flowLayout.scrollDirection = .vertical
         flowLayout.minimumLineSpacing = 0
         flowLayout.minimumInteritemSpacing = 0
+        flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         return flowLayout
     }()
 
@@ -34,6 +35,7 @@ class DetailViewController: BaseVC<DetailViewModel> {
     }()
 
     lazy var typeArray: [DetailViewTypes] = [.details, .dropDown]
+    lazy var height: CGFloat = 0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -56,20 +58,34 @@ class DetailViewController: BaseVC<DetailViewModel> {
     func bind() {
 
         viewModel.$character
-            .sink { [weak self] _ in
+            .sink { [weak self] character in
                 guard let self = self else { return }
+                self.viewModel.getCharacterEpispdes(character: character)
+            }.store(in: &cancelables)
+
+        viewModel.$characterEpisodes
+            .sink { [weak self] dataArray in
+                guard let self = self else { return }
+                self.height = self.getTableViewHeight(dataArray: dataArray)
                 self.collectionView.reloadData()
             }.store(in: &cancelables)
 
         viewModel.$episode
-            .sink { [weak self] _ in
+            .sink { [weak self] episode in
                 guard let self = self else { return }
-                self.collectionView.reloadData()
+                self.viewModel.getEpisodeCharacters(episode: episode)
             }.store(in: &cancelables)
 
         viewModel.$location
-            .sink { [weak self] _ in
+            .sink { [weak self] location in
                 guard let self = self else { return }
+                self.viewModel.getLocationResidents(location: location)
+            }.store(in: &cancelables)
+
+        viewModel.$charactersNames
+            .sink { [weak self] dataArray in
+                guard let self = self else { return }
+                self.height = self.getTableViewHeight(dataArray: dataArray)
                 self.collectionView.reloadData()
             }.store(in: &cancelables)
     }
@@ -125,14 +141,33 @@ extension DetailViewController: UICollectionViewDataSource {
         case .details:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterDetailCVC.identifier,
                                                                 for: indexPath) as? CharacterDetailCVC else { return UICollectionViewCell() }
-            if let character = viewModel.character {
-                cell.fillCell(with: character)
+            switch viewModel.viewType {
+            case .character:
+                cell.fillCell(with: viewModel.character)
+            case .episode:
+                cell.fillCell(with: viewModel.episode)
+            case .location:
+                cell.fillCell(with: viewModel.location)
+            default:
+                break
             }
             return cell
         case .dropDown:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DropDownCVC.identifier,
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DropDownCVC",
                                                                 for: indexPath) as? DropDownCVC else { return UICollectionViewCell() }
-            cell.fillCell()
+            switch viewModel.viewType {
+            case .character:
+                cell.fillCell(with: viewModel.characterEpisodes~,
+                              title: "Episodes")
+            case .episode:
+                cell.fillCell(with: viewModel.charactersNames~,
+                              title: "Characters")
+            case .location:
+                cell.fillCell(with: viewModel.charactersNames~,
+                              title: "Characters")
+            default:
+                break
+            }
             return cell
         }
     }
@@ -147,14 +182,46 @@ extension DetailViewController: UICollectionViewDelegateFlowLayout {
         let section = typeArray[indexPath.section]
         switch section {
         case .details:
+            return setupDetailSectionSize()
+        case .dropDown:
+            return CGSize(width: getScreenSize().width,
+                          height: self.height)
+        }
+    }
+
+    private func setupDetailSectionSize() -> CGSize {
+        switch viewModel.viewType {
+        case .character:
             return CGSize(width: getScreenSize().width,
                           height: 440)
-        case .dropDown:
-//            let height = CGFloat(viewModel.count~ * 65) + 50
-            let height = CGFloat(5*60) + 50
+        case .episode:
             return CGSize(width: getScreenSize().width,
-                          height: height)
+                          height: 380)
+        case .location:
+            return CGSize(width: getScreenSize().width,
+                          height: 380)
+        default:
+            return .zero
         }
+    }
+}
+
+// MARK: - TextRequiredHeightWidthCalculaterProtocol
+extension DetailViewController: TextRequiredHeightWidthCalculaterProtocol {
+
+    private func getTableViewHeight(dataArray: [String]?) -> CGFloat {
+        guard let dataArray = dataArray else { return .zero }
+        var height: CGFloat = 0
+        for item in dataArray {
+            let requiredHeight = calculateTextRequiredHeight(text: item,
+                                                             labelWidth: getScreenSize().width - 60,
+                                                             font: .systemFont(ofSize: 14,
+                                                                               weight: .semibold)) + 20
+            let minHeight: CGFloat = 50
+            let lastHeight = max(requiredHeight, minHeight)
+            height += lastHeight
+        }
+        return height + 25
     }
 }
 
