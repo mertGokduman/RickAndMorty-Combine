@@ -19,15 +19,27 @@ final class EditProfileViewModel: BaseViewModel {
 
     @Published var profilePicture: UIImage?
     @Published var infoArray: [InfoModel] = []
+    var isDataReady: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest($profilePicture,
+                                        $infoArray)
+        .map { _, infos in
+            !infos.isEmpty
+        }.eraseToAnyPublisher()
+    }
 
-    func setupProfilePicture() {
+    func setupDatas() {
+        self.setupProfilePicture()
+        self.setupInfoArray()
+    }
+
+    private func setupProfilePicture() {
         guard let data = UserDefaults.standard.data(forKey: AppConstants.UserDefaultsConstants.profilePicture) else { return }
         let decoded = try! PropertyListDecoder().decode(Data.self, from: data)
         let image = UIImage(data: decoded)
         self.profilePicture = image
     }
 
-    func setupInfoArray() {
+    private func setupInfoArray() {
 
         //Username
         if let username = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsConstants.username) {

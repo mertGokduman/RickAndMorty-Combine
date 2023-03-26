@@ -7,22 +7,7 @@
 
 import UIKit
 
-struct AppIconModel {
-
-    var name: String
-    var imgName: String
-    var type: AppIcons
-    var value: String? {
-        switch type {
-        case .orange:
-            return nil
-        default:
-            return type.rawValue
-        }
-    }
-}
-
-class AppIconViewController: BaseVC<BaseViewModel> {
+class AppIconViewController: BaseVC<AppIconViewModel> {
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
@@ -37,25 +22,10 @@ class AppIconViewController: BaseVC<BaseViewModel> {
         return tableView
     }()
 
-    lazy var appIconArray: [AppIconModel] = [AppIconModel(name: "Orange",
-                                                          imgName: "appIcon1",
-                                                          type: .orange),
-                                             AppIconModel(name: "Blue",
-                                                          imgName: "appIcon2",
-                                                          type: .blue),
-                                             AppIconModel(name: "Green",
-                                                          imgName: "appIcon3",
-                                                          type: .green),
-                                             AppIconModel(name: "Red",
-                                                          imgName: "appIcon4",
-                                                          type: .red),
-                                             AppIconModel(name: "Purple",
-                                                          imgName: "appIcon5",
-                                                          type: .purple)]
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.startLoading()
         self.tabBarController?.tabBar.isHidden = true
         self.btnAddHide()
     }
@@ -83,6 +53,7 @@ class AppIconViewController: BaseVC<BaseViewModel> {
             tableView.heightAnchor.constraint(equalToConstant: 350)
         ])
         self.tableView.reloadData()
+        self.stopLoading()
     }
 }
 
@@ -91,7 +62,7 @@ extension AppIconViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return self.appIconArray.count
+        return self.viewModel.appIconArray.count
     }
 
     func tableView(_ tableView: UITableView,
@@ -99,7 +70,7 @@ extension AppIconViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppIconTVC",
                                                        for: indexPath) as? AppIconTVC else { return UITableViewCell() }
         cell.selectionStyle = .none
-        cell.fillCell(with: appIconArray[indexPath.row])
+        cell.fillCell(with: self.viewModel.appIconArray[indexPath.row])
         return cell
     }
 }
@@ -109,7 +80,7 @@ extension AppIconViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath) {
-        let value = appIconArray[indexPath.row].value
+        let value = self.viewModel.appIconArray[indexPath.row].value
         AppIconManager.shared.changeAppIcon(to: value)
     }
 }

@@ -44,8 +44,11 @@ class WelcomeHeader: UICollectionReusableView {
         }
 
         if let name = name {
-            lblUserName.text = "Welcome back \(name)"
+            lblUserName.text = "Welcome back \(name),"
         }
+
+        lazy var todayDate = Date().formatDate()
+        lblDate.text = "Today: \(todayDate)"
     }
 
     @objc private func btnUserTapped() {

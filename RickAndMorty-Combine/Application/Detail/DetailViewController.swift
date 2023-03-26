@@ -40,6 +40,7 @@ class DetailViewController: BaseVC<DetailViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.startLoading()
         navigationController?.setNavigationBarHidden(false, animated: false)
         self.tabBarController?.tabBar.isHidden = true
         self.btnAddHide()
@@ -68,6 +69,7 @@ class DetailViewController: BaseVC<DetailViewModel> {
                 guard let self = self else { return }
                 self.height = self.getTableViewHeight(dataArray: dataArray)
                 self.collectionView.reloadData()
+                self.stopLoading()
             }.store(in: &cancelables)
 
         viewModel.$episode
@@ -87,6 +89,7 @@ class DetailViewController: BaseVC<DetailViewModel> {
                 guard let self = self else { return }
                 self.height = self.getTableViewHeight(dataArray: dataArray)
                 self.collectionView.reloadData()
+                self.stopLoading()
             }.store(in: &cancelables)
     }
 

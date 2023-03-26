@@ -42,9 +42,9 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.startLoading()
         self.tabBarController?.tabBar.isHidden = false
         self.btnAddShow()
-        viewModel.getEpisodes(isPagination: false)
     }
 
     override func viewDidLoad() {
@@ -55,15 +55,24 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
 
         setupUI()
         bind()
+        viewModel.getEpisodes(isPagination: false)
         makeViewDismissKeyboard(cancelsTouchesInView: false)
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.stopLoading()
     }
 
     // MARK: - BIND
     private func bind() {
 
         viewModel.$episodes
-            .sink { _ in
+            .sink { [weak self] _ in
+                guard let self = self else { return }
                 self.collectionView.reloadData()
+                self.stopLoading()
             }.store(in: &cancelables)
     }
 
@@ -88,8 +97,6 @@ class EpisodesViewController: BaseVC<EpisodeViewModel> {
         ])
 
         self.setupCollectionView()
-
-        self.collectionView.reloadData()
     }
 
     // MARK: - COLLECTIONVIEW SETUPS

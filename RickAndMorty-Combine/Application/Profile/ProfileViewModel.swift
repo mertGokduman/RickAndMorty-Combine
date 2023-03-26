@@ -12,11 +12,20 @@ import UIKit
 final class ProfileViewModel: BaseViewModel {
 
     @Published var profilePicture: UIImage?
-    var name: String = ""
-    var surname: String = ""
+    var name: String = "New"
+    var surname: String = "User"
     @Published var fullName: String?
     @Published var isDarkModeOn: Bool?
-    @Published var appIconName: String?
+    @Published var appIconName: String? = ""
+    var isDataReady: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest4($profilePicture,
+                                         $fullName,
+                                         $isDarkModeOn,
+                                         $appIconName)
+        .map { _, _, darkMode, appIcon in
+            darkMode != nil && appIcon != nil
+        }.eraseToAnyPublisher()
+    }
 
     func setupProfilePicture() {
         guard let data = UserDefaults.standard.data(forKey: AppConstants.UserDefaultsConstants.profilePicture) else { return }
@@ -46,6 +55,6 @@ final class ProfileViewModel: BaseViewModel {
         self.isDarkModeOn = UserDefaults.standard.bool(forKey: AppConstants.UserDefaultsConstants.appearance)
 
         //AppIcon
-        appIconName = AppIconManager.shared.getSelectedAppIcon()?.firstLowercased
+        self.appIconName = AppIconManager.shared.getSelectedAppIcon()?.firstLowercased
     }
 }

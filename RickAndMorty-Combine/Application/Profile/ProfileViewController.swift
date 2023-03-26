@@ -39,6 +39,7 @@ class ProfileViewController: BaseVC<ProfileViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.startLoading()
         self.tabBarController?.tabBar.isHidden = false
         self.viewModel.getUserDatas()
         self.btnAddShow()
@@ -57,24 +58,14 @@ class ProfileViewController: BaseVC<ProfileViewModel> {
     // MARK: - Bind
     private func bind() {
 
-        viewModel.$profilePicture
-            .sink { _ in
-                self.collectionView.reloadData()
-            }.store(in: &cancelables)
-
-        viewModel.$fullName
-            .sink { _ in
-                self.collectionView.reloadData()
-            }.store(in: &cancelables)
-
-        viewModel.$isDarkModeOn
-            .sink { _ in
-                self.collectionView.reloadData()
-            }.store(in: &cancelables)
-
-        viewModel.$appIconName
-            .sink { _ in
-                self.collectionView.reloadData()
+        viewModel.isDataReady
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isReady in
+                guard let self = self else { return }
+                if isReady {
+                    self.collectionView.reloadData()
+                    self.stopLoading()
+                }
             }.store(in: &cancelables)
     }
 
@@ -150,13 +141,7 @@ extension ProfileViewController: UICollectionViewDataSource {
 }
 
 // MARK: - UICollectionViewDelegate
-extension ProfileViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-
-    }
-}
+extension ProfileViewController: UICollectionViewDelegate { }
 
 // MARK: - UICollectionViewDelegateFlowLayout
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {

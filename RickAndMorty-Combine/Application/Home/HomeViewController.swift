@@ -35,11 +35,8 @@ class HomeViewController: BaseVC<HomeViewModel> {
         return collectionView
     }()
 
-    lazy var typeArray: [HomeCollectionViewType] = [.characters, .episodes, .locations]
-
     weak var headerView: WelcomeHeader?
-
-    var requiredResults: Int = 10
+    lazy var typeArray: [HomeCollectionViewType] = [.characters, .episodes, .locations]
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -62,51 +59,15 @@ class HomeViewController: BaseVC<HomeViewModel> {
     // MARK: - BINDING DATAS
     private func bind() {
 
-        viewModel.$profilePicture
-            .sink {  _ in
-                self.collectionView.reloadData()
-                self.requiredResults -= 1
-                self.checkRequired()
-            }.store(in: &cancelables)
-
-        viewModel.$name
-            .sink { _ in
-                self.collectionView.reloadData()
-                self.requiredResults -= 1
-                self.checkRequired()
-            }.store(in: &cancelables)
-
-        viewModel.$characters
-            .sink { [weak self] _ in
+        viewModel.isDataReady
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isReady in
                 guard let self = self else { return }
-                self.collectionView.reloadData()
-                self.requiredResults -= 1
-                self.checkRequired()
+                if isReady {
+                    self.collectionView.reloadData()
+                    self.stopLoading()
+                }
             }.store(in: &cancelables)
-
-        viewModel.$episodes
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.collectionView.reloadData()
-                self.requiredResults -= 1
-                self.checkRequired()
-            }.store(in: &cancelables)
-
-        viewModel.$locations
-            .sink { [weak self] _ in
-                guard let self = self else { return }
-                self.collectionView.reloadData()
-                self.requiredResults -= 1
-                self.checkRequired()
-            }.store(in: &cancelables)
-    }
-
-    private func checkRequired() {
-
-        if self.requiredResults <= 0 {
-            self.stopLoading()
-            self.requiredResults = 5
-        }
     }
 
     // MARK: - SETUP UI
@@ -244,13 +205,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 }
 
 // MARK: - UICollectionViewDelegate
-extension HomeViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-
-    }
-}
+extension HomeViewController: UICollectionViewDelegate { }
 
 // MARK: - UIScrollViewDelegate
 extension HomeViewController: UIScrollViewDelegate {

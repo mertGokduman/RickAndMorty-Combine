@@ -25,7 +25,7 @@ final class AppIconManager {
     }
 
     func getSelectedAppIcon() -> String? {
-        let appIconName = UIApplication.shared.alternateIconName
-        return appIconName
+        lazy var appIconName = UIApplication.shared.alternateIconName
+        return appIconName != nil ? appIconName : "appIcon1"
     }
 }

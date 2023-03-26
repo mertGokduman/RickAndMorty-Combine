@@ -47,11 +47,10 @@ class EditProfileViewController: BaseVC<EditProfileViewModel> {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        self.startLoading()
         self.tabBarController?.tabBar.isHidden = true
         self.btnAddHide()
-
-        self.viewModel.setupProfilePicture()
-        self.viewModel.setupInfoArray()
+        self.viewModel.setupDatas()
     }
 
     override func viewDidLoad() {
@@ -66,14 +65,13 @@ class EditProfileViewController: BaseVC<EditProfileViewModel> {
     }
 
     private func bind() {
-        viewModel.$profilePicture
-            .sink { _ in
-                self.tableView.reloadData()
-            }.store(in: &cancelables)
 
-        viewModel.$infoArray
-            .sink { _ in
+        viewModel.isDataReady
+            .receive(on: RunLoop.main)
+            .sink { [weak self] isDataReady in
+                guard let self = self else { return }
                 self.tableView.reloadData()
+                self.stopLoading()
             }.store(in: &cancelables)
     }
 
@@ -192,12 +190,7 @@ extension EditProfileViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension EditProfileViewController: UITableViewDelegate {
-
-    func tableView(_ tableView: UITableView,
-                   didSelectRowAt indexPath: IndexPath) {
-
-    }
-
+    
     func tableView(_ tableView: UITableView,
                    willDisplay cell: UITableViewCell,
                    forRowAt indexPath: IndexPath) {

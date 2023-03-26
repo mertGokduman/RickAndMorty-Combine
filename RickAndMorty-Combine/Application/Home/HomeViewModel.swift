@@ -12,10 +12,17 @@ import UIKit
 final class HomeViewModel: BaseViewModel {
 
     @Published var profilePicture: UIImage?
-    @Published var name: String?
+    @Published var name: String = "New User"
     @Published var characters: [Character]?
     @Published var episodes: [Episode]?
     @Published var locations: [Location]?
+    var isDataReady: AnyPublisher<Bool, Never> {
+        return Publishers.CombineLatest3($characters, $episodes, $locations)
+            .map { characters, episodes, locations in
+                characters != nil && episodes != nil && locations != nil
+            }
+            .eraseToAnyPublisher()
+    }
 
     func getDatas() {
         self.setupProfilePicture()

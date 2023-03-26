@@ -81,6 +81,8 @@
 		B4B03D6329C9F47500ADB5B3 /* DropDownCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */; };
 		B4B03D6629C9F68600ADB5B3 /* DropDownDetailTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B03D6429C9F68600ADB5B3 /* DropDownDetailTVC.swift */; };
 		B4B03D6729C9F68600ADB5B3 /* DropDownDetailTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B03D6529C9F68600ADB5B3 /* DropDownDetailTVC.xib */; };
+		B4BFEA3729D0846D00786433 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEA3629D0846D00786433 /* Date + Extension.swift */; };
+		B4BFEA3929D086B500786433 /* AppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEA3829D086B500786433 /* AppIconViewModel.swift */; };
 		B4E8CFAC29C1EF410005CDC5 /* CharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8CFAA29C1EF410005CDC5 /* CharacterCVC.swift */; };
 		B4E8CFAD29C1EF410005CDC5 /* CharacterCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4E8CFAB29C1EF410005CDC5 /* CharacterCVC.xib */; };
 		B4E8CFB129C1EFFF0005CDC5 /* SingleCharacterCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E8CFAF29C1EFFF0005CDC5 /* SingleCharacterCVC.swift */; };
@@ -167,6 +169,8 @@
 		B4B03D6129C9F47500ADB5B3 /* DropDownCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownCVC.xib; sourceTree = "<group>"; };
 		B4B03D6429C9F68600ADB5B3 /* DropDownDetailTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownDetailTVC.swift; sourceTree = "<group>"; };
 		B4B03D6529C9F68600ADB5B3 /* DropDownDetailTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownDetailTVC.xib; sourceTree = "<group>"; };
+		B4BFEA3629D0846D00786433 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		B4BFEA3829D086B500786433 /* AppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconViewModel.swift; sourceTree = "<group>"; };
 		B4E8CFAA29C1EF410005CDC5 /* CharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCVC.swift; sourceTree = "<group>"; };
 		B4E8CFAB29C1EF410005CDC5 /* CharacterCVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCVC.xib; sourceTree = "<group>"; };
 		B4E8CFAF29C1EFFF0005CDC5 /* SingleCharacterCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleCharacterCVC.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 			children = (
 				B441B18729C4A611002FF490 /* AppIconCell */,
 				B441B18329C498CA002FF490 /* AppIconViewController.swift */,
+				B4BFEA3829D086B500786433 /* AppIconViewModel.swift */,
 			);
 			path = AppIconVC;
 			sourceTree = "<group>";
@@ -439,6 +444,7 @@
 				B459F70A29C76A20003A2FF2 /* UIImage + Extension.swift */,
 				B43910FF29CB479000D465B1 /* Int + Extension.swift */,
 				B439110629CCB1BA00D465B1 /* UIView + Extension.swift */,
+				B4BFEA3629D0846D00786433 /* Date + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -870,6 +876,7 @@
 				B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */,
 				B4A5762729C0E82700F33CB9 /* NetworkManager.swift in Sources */,
 				B441B17429C35F3E002FF490 /* ProfileViewModel.swift in Sources */,
+				B4BFEA3929D086B500786433 /* AppIconViewModel.swift in Sources */,
 				B4A5763629C0EFCD00F33CB9 /* EpisodeRequestModel.swift in Sources */,
 				B4A5765829C103C500F33CB9 /* ReusableView.swift in Sources */,
 				B441B17029C35E94002FF490 /* LocationsViewModel.swift in Sources */,
@@ -894,6 +901,7 @@
 				B459F70229C747F3003A2FF2 /* PhotoTVC.swift in Sources */,
 				B467F31F29C880F20008E129 /* SearchView.swift in Sources */,
 				B441B18D29C4B6DA002FF490 /* UIApplication + Extension.swift in Sources */,
+				B4BFEA3729D0846D00786433 /* Date + Extension.swift in Sources */,
 				B441B17B29C37633002FF490 /* ProfilePhotoCVC.swift in Sources */,
 				B4B03D5B29C9E77100ADB5B3 /* SingleEpisodeRequestModel.swift in Sources */,
 				B4B03D5E29C9E7C800ADB5B3 /* SingleLocationRequestModel.swift in Sources */,

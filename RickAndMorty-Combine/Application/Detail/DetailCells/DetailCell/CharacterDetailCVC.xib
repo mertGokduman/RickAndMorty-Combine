@@ -25,7 +25,7 @@
                             <constraint firstAttribute="height" constant="200" id="Ha3-kC-WYi"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick Sanchez" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-j9-O0C">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aye-j9-O0C">
                         <rect key="frame" x="30" y="250" width="354" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="VKk-pu-4J2"/>
@@ -110,7 +110,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="user" width="400" height="400"/>
+        <image name="user" width="300" height="300"/>
         <namedColor name="LabelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
