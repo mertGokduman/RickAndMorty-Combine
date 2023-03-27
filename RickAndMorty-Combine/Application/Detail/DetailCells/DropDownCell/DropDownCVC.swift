@@ -17,6 +17,7 @@ class DropDownCVC: UICollectionViewCell {
         didSet {
             tableView.estimatedRowHeight = DropDownDetailTVC.rowHeight
             tableView.isScrollEnabled = false
+            tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
             if #available(iOS 15.0, *) {
                 tableView.sectionHeaderTopPadding = 0.0
             }
@@ -56,6 +57,7 @@ extension DropDownCVC: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DropDownDetailTVC.identifier,
                                                        for: indexPath) as? DropDownDetailTVC else { return UITableViewCell() }
         cell.fillCell(with: self.dataArray[indexPath.row])
+        cell.selectionStyle = .none
         return cell
     }
 }

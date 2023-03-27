@@ -60,16 +60,16 @@ extension BaseVC {
 
     func startLoading() {
         DispatchQueue.main.async {
-            if let tabbar = self.tabBarController {
-                tabbar.view.addSubview(self.animationView)
-            } else if let navBar = self.navigationController {
+            if let navBar = self.navigationController {
                 navBar.view.addSubview(self.animationView)
+            } else {
+                self.view.addSubview(self.animationView)
             }
             self.animationView.frame = CGRect(x: 0,
                                               y: 0,
                                               width: self.view.frame.width,
                                               height: self.view.frame.height)
-            self.animationView.createBlurBackgroundView(color: .white.withAlphaComponent(0.05))
+            self.animationView.backgroundColor = UIColor(named: "BGColor")?.withAlphaComponent(0.95)
             self.view.bringSubviewToFront(self.animationView)
             self.setupAnimation()
             self.lottieanimation?.play()
