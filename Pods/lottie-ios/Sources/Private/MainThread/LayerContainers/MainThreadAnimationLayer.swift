@@ -23,6 +23,7 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
     imageProvider: AnimationImageProvider,
     textProvider: AnimationTextProvider,
     fontProvider: AnimationFontProvider,
+    maskAnimationToBounds: Bool,
     logger: LottieLogger)
   {
     layerImageProvider = LayerImageProvider(imageProvider: imageProvider, assets: animation.assetLibrary?.imageAssets)
@@ -31,6 +32,7 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
     animationLayers = []
     self.logger = logger
     super.init()
+    masksToBounds = maskAnimationToBounds
     bounds = animation.bounds
     let layers = animation.layers.initializeCompositionLayers(
       assetLibrary: animation.assetLibrary,
@@ -145,6 +147,9 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
   /// The animatable Current Frame Property
   @NSManaged var currentFrame: CGFloat
 
+  /// The parent `LottieAnimationView` that manages this layer
+  weak var animationView: LottieAnimationView?
+
   var animationLayers: ContiguousArray<CompositionLayer>
 
   var primaryAnimationKey: AnimationKey {
@@ -170,7 +175,7 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
 
   var renderScale: CGFloat = 1 {
     didSet {
-      animationLayers.forEach({ $0.renderScale = renderScale })
+      animationLayers.forEach { $0.renderScale = renderScale }
     }
   }
 
@@ -194,12 +199,19 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
 
   /// Forces the view to update its drawing.
   func forceDisplayUpdate() {
-    animationLayers.forEach({ $0.displayWithFrame(frame: currentFrame, forceUpdates: true) })
+    animationLayers.forEach { $0.displayWithFrame(frame: currentFrame, forceUpdates: true) }
   }
 
   func logHierarchyKeypaths() {
     logger.info("Lottie: Logging Animation Keypaths")
-    animationLayers.forEach({ $0.logKeypaths(for: nil, logger: self.logger) })
+
+    for keypath in allHierarchyKeypaths() {
+      logger.info(keypath)
+    }
+  }
+
+  func allHierarchyKeypaths() -> [String] {
+    animationLayers.flatMap { $0.allKeypaths() }
   }
 
   func setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath) {
