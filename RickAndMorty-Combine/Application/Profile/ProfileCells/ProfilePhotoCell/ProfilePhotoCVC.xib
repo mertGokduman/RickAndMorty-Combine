@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -30,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Your Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OP7-eD-nth">
-                                <rect key="frame" x="20" y="280" width="334" height="44"/>
+                                <rect key="frame" x="20" y="280" width="334" height="54"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <color key="textColor" name="LabelColor"/>
                                 <nil key="highlightedColor"/>
@@ -48,18 +47,27 @@
                                     <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h2K-vB-pYl">
+                                <rect key="frame" x="10" y="344" width="354" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="LabelColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="BGColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="OP7-eD-nth" secondAttribute="trailing" constant="20" id="3w3-Tn-NVh"/>
+                            <constraint firstItem="h2K-vB-pYl" firstAttribute="top" secondItem="OP7-eD-nth" secondAttribute="bottom" constant="10" id="MCz-92-mrO"/>
                             <constraint firstAttribute="trailing" secondItem="KEq-78-JfU" secondAttribute="trailing" constant="5" id="TcM-ZF-kCT"/>
                             <constraint firstItem="qRY-Ll-vBH" firstAttribute="top" secondItem="NOw-7D-EfN" secondAttribute="top" constant="50" id="Usc-JH-1BV"/>
                             <constraint firstItem="qRY-Ll-vBH" firstAttribute="centerX" secondItem="NOw-7D-EfN" secondAttribute="centerX" id="X5g-CG-V73"/>
+                            <constraint firstItem="h2K-vB-pYl" firstAttribute="leading" secondItem="NOw-7D-EfN" secondAttribute="leading" constant="10" id="YGY-Mo-30y"/>
                             <constraint firstItem="OP7-eD-nth" firstAttribute="centerX" secondItem="NOw-7D-EfN" secondAttribute="centerX" id="Yc7-VE-rac"/>
                             <constraint firstItem="OP7-eD-nth" firstAttribute="top" secondItem="qRY-Ll-vBH" secondAttribute="bottom" constant="30" id="lWe-C9-lFH"/>
                             <constraint firstItem="KEq-78-JfU" firstAttribute="top" secondItem="NOw-7D-EfN" secondAttribute="top" constant="5" id="ncx-AL-c50"/>
+                            <constraint firstAttribute="bottom" secondItem="h2K-vB-pYl" secondAttribute="bottom" constant="10" id="vlR-ly-qsO"/>
                             <constraint firstItem="OP7-eD-nth" firstAttribute="leading" secondItem="NOw-7D-EfN" secondAttribute="leading" constant="20" id="xt5-Vc-Mot"/>
-                            <constraint firstAttribute="bottom" secondItem="OP7-eD-nth" secondAttribute="bottom" constant="30" id="yMu-UO-vXx"/>
+                            <constraint firstAttribute="trailing" secondItem="h2K-vB-pYl" secondAttribute="trailing" constant="10" id="yHQ-oZ-Ad5"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -73,6 +81,7 @@
                 <constraint firstItem="NOw-7D-EfN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="vlD-uy-5rD"/>
             </constraints>
             <connections>
+                <outlet property="bioLabel" destination="h2K-vB-pYl" id="ZZg-ap-9nu"/>
                 <outlet property="btnEdit" destination="KEq-78-JfU" id="iEb-Hn-EOl"/>
                 <outlet property="imgUser" destination="qRY-Ll-vBH" id="Pf8-zt-8Ba"/>
                 <outlet property="lblUserName" destination="OP7-eD-nth" id="oRm-50-hXH"/>
@@ -82,7 +91,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="square.and.pencil" catalog="system" width="128" height="113"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="121"/>
         <image name="user" width="300" height="300"/>
         <namedColor name="BGColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

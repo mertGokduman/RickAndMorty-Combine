@@ -407,7 +407,7 @@
 		4C57889D98E6BBF1EE96A9C7EE76D5A4 /* RepeaterLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RepeaterLayer.swift; path = Sources/Private/CoreAnimation/Layers/RepeaterLayer.swift; sourceTree = "<group>"; };
 		4DD3513BB334A35BC8C2840FA8C32FA9 /* SizeValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SizeValueProvider.swift; path = Sources/Public/DynamicProperties/ValueProviders/SizeValueProvider.swift; sourceTree = "<group>"; };
 		4FF6295EA901DD10D8130DCAD14EC0D5 /* Kingfisher-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Kingfisher-umbrella.h"; sourceTree = "<group>"; };
-		51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "lottie-ios"; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Lottie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		557FC9CEAE68A9D6FF2E0D4129F3D81F /* NSButton+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSButton+Kingfisher.swift"; path = "Sources/Extensions/NSButton+Kingfisher.swift"; sourceTree = "<group>"; };
 		578189D1510B1FA1D58A1818C904F8AA /* PathOutputNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PathOutputNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/OutputNodes/PathOutputNode.swift; sourceTree = "<group>"; };
 		57E9602BE194E43BD2630770598B5847 /* Source.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Source.swift; path = Sources/General/ImageSource/Source.swift; sourceTree = "<group>"; };
@@ -503,11 +503,11 @@
 		9B1387CD5C39DBD3351079FA5A5A4000 /* UnitBezier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UnitBezier.swift; path = Sources/Private/Utility/Primitives/UnitBezier.swift; sourceTree = "<group>"; };
 		9B2F1AB0203297A186ED73BD7C2A9EE1 /* PolygonNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PolygonNode.swift; path = Sources/Private/MainThread/NodeRenderSystem/Nodes/PathNodes/PolygonNode.swift; sourceTree = "<group>"; };
 		9C5CD308D993F4C6FB30F254B998CDE5 /* KF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KF.swift; path = Sources/General/KF.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E006663A44F3325AA90016E5B4DD0A1 /* KFImageProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageProtocol.swift; path = Sources/SwiftUI/KFImageProtocol.swift; sourceTree = "<group>"; };
 		9F5C0ABA02BC2F7F913DD5614277550D /* Glyph.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Glyph.swift; path = Sources/Private/Model/Text/Glyph.swift; sourceTree = "<group>"; };
 		A10159380DBBDCE935367E62F5EA2B9D /* Storage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Storage.swift; path = Sources/Cache/Storage.swift; sourceTree = "<group>"; };
-		A1937684B4DE76BE066DF47476B6D12E /* Pods-RickAndMorty-Combine */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-RickAndMorty-Combine"; path = Pods_RickAndMorty_Combine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1937684B4DE76BE066DF47476B6D12E /* Pods_RickAndMorty_Combine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMorty_Combine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A28328195D8BBF0E725D4220D8B9F512 /* Data+Serialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Serialization.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Data+Serialization.swift"; sourceTree = "<group>"; };
 		A29E9D791407FE3998C209EBE438EC5A /* Filter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Filter.swift; path = Sources/Image/Filter.swift; sourceTree = "<group>"; };
 		A3B352746503EEB4076D1ADF391A92C2 /* LottieAnimationViewInitializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LottieAnimationViewInitializers.swift; path = Sources/Public/Animation/LottieAnimationViewInitializers.swift; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 		B0371341097C810A6897DE5904D9E162 /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Utility/Box.swift; sourceTree = "<group>"; };
 		B0CCAFFB3379C58050038C8DDE338D57 /* KingfisherError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KingfisherError.swift; path = Sources/General/KingfisherError.swift; sourceTree = "<group>"; };
 		B11F3F469DC617B3639380B7B9BE174B /* Archive+Progress.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Archive+Progress.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Archive+Progress.swift"; sourceTree = "<group>"; };
-		B2249C68992065A0E64ED2685D8D3BC6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = Sources/Private/Model/DotLottie/ZipFoundation/README.md; sourceTree = "<group>"; };
+		B2249C68992065A0E64ED2685D8D3BC6 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = Sources/Private/Model/DotLottie/ZipFoundation/README.md; sourceTree = "<group>"; };
 		B381046F2D3FF44CCB2A99B27E61FB15 /* ShapeTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeTransform.swift; path = Sources/Private/Model/ShapeItems/ShapeTransform.swift; sourceTree = "<group>"; };
 		B3ADDC7E3934BF06FF9AFCC7EA44B556 /* ImageDownloaderDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDownloaderDelegate.swift; path = Sources/Networking/ImageDownloaderDelegate.swift; sourceTree = "<group>"; };
 		B3FA1A2CFAE5D7BA7C074B48C7F1C410 /* TVMonogramView+Kingfisher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "TVMonogramView+Kingfisher.swift"; path = "Sources/Extensions/TVMonogramView+Kingfisher.swift"; sourceTree = "<group>"; };
@@ -547,7 +547,7 @@
 		C2427BEA6CB82178EA0AABE4CFDA2066 /* ShapeRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ShapeRenderLayer.swift; path = Sources/Private/MainThread/NodeRenderSystem/RenderLayers/ShapeRenderLayer.swift; sourceTree = "<group>"; };
 		C2C479D9414361FED8BDF2F6B1677EE4 /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
 		C3BF11B503CD4F3D90CDCCC8BB1C1D25 /* Data+Compression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Data+Compression.swift"; path = "Sources/Private/Model/DotLottie/ZipFoundation/Data+Compression.swift"; sourceTree = "<group>"; };
-		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Kingfisher; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C40F193F1799A909B130890D35FE9AAE /* ImageDataProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProvider.swift; path = Sources/General/ImageSource/ImageDataProvider.swift; sourceTree = "<group>"; };
 		C41259FDD41482229C0F34CB7D05CB11 /* AnyValueProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyValueProvider.swift; path = Sources/Public/DynamicProperties/AnyValueProvider.swift; sourceTree = "<group>"; };
 		C491560D1F017CDC9D89D4CAFC57AD10 /* GradientRenderLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientRenderLayer.swift; path = Sources/Private/CoreAnimation/Layers/GradientRenderLayer.swift; sourceTree = "<group>"; };
@@ -929,16 +929,15 @@
 				617033B0E8921FF230F7D7BD03670470 /* VisibilityAnimation.swift */,
 				BEAE802B49ACCBBFD241C32A5330F872 /* Support Files */,
 			);
-			name = "lottie-ios";
 			path = "lottie-ios";
 			sourceTree = "<group>";
 		};
 		A082992C5E31F9AC35E69170BA0CAD6E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
-				51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */,
-				A1937684B4DE76BE066DF47476B6D12E /* Pods-RickAndMorty-Combine */,
+				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */,
+				51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */,
+				A1937684B4DE76BE066DF47476B6D12E /* Pods_RickAndMorty_Combine.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1009,7 +1008,6 @@
 				89911A486DDAFA5C03518566441319A0 /* WKInterfaceImage+Kingfisher.swift */,
 				71D489E0C28B07C94EB145350496AFB4 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -1100,7 +1098,7 @@
 			);
 			name = "lottie-ios";
 			productName = Lottie;
-			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* lottie-ios */;
+			productReference = 51BA97E8B5085EFFB47BC9C0B785CEA7 /* Lottie.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		72FCB429B3C00221F305F0DCF3CB374C /* Pods-RickAndMorty-Combine */ = {
@@ -1120,7 +1118,7 @@
 			);
 			name = "Pods-RickAndMorty-Combine";
 			productName = Pods_RickAndMorty_Combine;
-			productReference = A1937684B4DE76BE066DF47476B6D12E /* Pods-RickAndMorty-Combine */;
+			productReference = A1937684B4DE76BE066DF47476B6D12E /* Pods_RickAndMorty_Combine.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E8022D22FAA6690B5E1C379C1BCE1491 /* Kingfisher */ = {
@@ -1138,7 +1136,7 @@
 			);
 			name = Kingfisher;
 			productName = Kingfisher;
-			productReference = C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */;
+			productReference = C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -1690,7 +1688,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1798,7 +1796,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/lottie-ios/lottie-ios-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/lottie-ios/lottie-ios-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

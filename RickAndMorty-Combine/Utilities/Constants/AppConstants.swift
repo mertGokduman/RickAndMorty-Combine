@@ -15,5 +15,6 @@ struct AppConstants {
         static let username = "username"
         static let firstname = "firstName"
         static let surname = "surname"
+        static let bio = "bio"
     }
 }

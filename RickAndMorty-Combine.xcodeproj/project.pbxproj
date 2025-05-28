@@ -89,6 +89,8 @@
 		B4F3BAEC29C8940B002A8815 /* SearchCharactersRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F3BAEB29C8940B002A8815 /* SearchCharactersRequestModel.swift */; };
 		B4F3BAF329C8A95E002A8815 /* SearchLocationRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F3BAF229C8A95E002A8815 /* SearchLocationRequestModel.swift */; };
 		B4F3BAF729C8AC60002A8815 /* SearchEpisodesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F3BAF629C8AC60002A8815 /* SearchEpisodesRequestModel.swift */; };
+		E73FF9CE2DE6249500007C13 /* EditPictureAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73FF9CD2DE6249500007C13 /* EditPictureAI.swift */; };
+		E75CE4AF2DE630E00048784C /* SwiftUI+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75CE4AE2DE630E00048784C /* SwiftUI+UITextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +180,8 @@
 		B4F3BAF629C8AC60002A8815 /* SearchEpisodesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEpisodesRequestModel.swift; sourceTree = "<group>"; };
 		C7CF6134E7BEE0ECD6D17596 /* Pods-RickAndMorty-Combine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-Combine.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-Combine/Pods-RickAndMorty-Combine.debug.xcconfig"; sourceTree = "<group>"; };
 		DA8960B59FB7FB5445915693 /* Pods-RickAndMorty-Combine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMorty-Combine.release.xcconfig"; path = "Target Support Files/Pods-RickAndMorty-Combine/Pods-RickAndMorty-Combine.release.xcconfig"; sourceTree = "<group>"; };
+		E73FF9CD2DE6249500007C13 /* EditPictureAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPictureAI.swift; sourceTree = "<group>"; };
+		E75CE4AE2DE630E00048784C /* SwiftUI+UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftUI+UITextView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +278,7 @@
 		B459F6F629C74500003A2FF2 /* EditProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				E73FF9CC2DE6245200007C13 /* EditProfilePictureWithAI */,
 				B459F6FD29C747C7003A2FF2 /* EditProfileCells */,
 				B459F6F729C74524003A2FF2 /* EditProfileViewController.swift */,
 				B459F6F929C74576003A2FF2 /* EditProfileViewModel.swift */,
@@ -716,6 +721,23 @@
 			path = SearchEpisodes;
 			sourceTree = "<group>";
 		};
+		E73FF9CC2DE6245200007C13 /* EditProfilePictureWithAI */ = {
+			isa = PBXGroup;
+			children = (
+				E75CE4AD2DE630CF0048784C /* Views */,
+				E73FF9CD2DE6249500007C13 /* EditPictureAI.swift */,
+			);
+			path = EditProfilePictureWithAI;
+			sourceTree = "<group>";
+		};
+		E75CE4AD2DE630CF0048784C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E75CE4AE2DE630E00048784C /* SwiftUI+UITextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -871,6 +893,7 @@
 				B4A5763C29C0F2BB00F33CB9 /* LocationResponseModel.swift in Sources */,
 				B41E543129C2183B00F88DE1 /* SafeUnwrap.swift in Sources */,
 				B4A5762729C0E82700F33CB9 /* NetworkManager.swift in Sources */,
+				E75CE4AF2DE630E00048784C /* SwiftUI+UITextView.swift in Sources */,
 				B441B17429C35F3E002FF490 /* ProfileViewModel.swift in Sources */,
 				B4BFEA3929D086B500786433 /* AppIconViewModel.swift in Sources */,
 				B4A5763629C0EFCD00F33CB9 /* EpisodeRequestModel.swift in Sources */,
@@ -904,6 +927,7 @@
 				B441B18029C37BEF002FF490 /* AppearanceCVC.swift in Sources */,
 				B459F70629C74DA9003A2FF2 /* InfoTVC.swift in Sources */,
 				B4A5763829C0F0DC00F33CB9 /* EpisodeResponseModel.swift in Sources */,
+				E73FF9CE2DE6249500007C13 /* EditPictureAI.swift in Sources */,
 				B4E8CFB129C1EFFF0005CDC5 /* SingleCharacterCVC.swift in Sources */,
 				B441B18F29C4B817002FF490 /* AppIconManager.swift in Sources */,
 				B4A5760E29C0E61500F33CB9 /* SceneDelegate.swift in Sources */,
@@ -1049,7 +1073,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FKYKQ78NXT;
+				DEVELOPMENT_TEAM = J4TD7HYKHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RickAndMorty-Combine/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) wants to use camera";
@@ -1059,7 +1083,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1085,7 +1109,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FKYKQ78NXT;
+				DEVELOPMENT_TEAM = J4TD7HYKHR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "RickAndMorty-Combine/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "$(PRODUCT_NAME) wants to use camera";
@@ -1095,7 +1119,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

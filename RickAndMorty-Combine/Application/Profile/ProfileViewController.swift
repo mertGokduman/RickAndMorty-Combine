@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 enum ProfileCollectionViewType {
     case photo
@@ -125,7 +126,8 @@ extension ProfileViewController: UICollectionViewDataSource {
                                                                 for: indexPath) as? ProfilePhotoCVC else { return UICollectionViewCell() }
             cell.delegate = self
             cell.fillCell(with: self.viewModel.profilePicture,
-                          userName: self.viewModel.fullName)
+                          userName: self.viewModel.fullName,
+                          bioText: self.viewModel.userBio)
             return cell
         case .appearance:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AppearanceCVC",
@@ -152,7 +154,7 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         let section = typeArray[indexPath.section]
         switch section {
         case .photo:
-            return CGSize(width: getScreenSize().width, height: getScreenSize().width)
+            return CGSize(width: getScreenSize().width, height: getScreenSize().width * 1.2)
         case .appearance:
             return CGSize(width: getScreenSize().width,
                           height: 100)
@@ -185,8 +187,14 @@ extension ProfileViewController: AppearanceCellDelegate {
 extension ProfileViewController: ProfilePhotoDelegate {
 
     func btnEditPressed() {
-        let vc = EditProfileViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+        let editView = EditPictureAI {
+            self.navigationController?.popViewController(animated: true)
+        }
+        let hostingController = UIHostingController(rootView: editView)
+        self.navigationController?.pushViewController(hostingController, animated: true)
+
+//        let vc = EditProfileViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

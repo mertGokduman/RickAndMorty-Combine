@@ -36,6 +36,7 @@ class ProfilePhotoCVC: UICollectionViewCell {
     }
     @IBOutlet weak var lblUserName: UILabel!
     @IBOutlet weak var btnEdit: UIButton!
+    @IBOutlet weak var bioLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,8 +48,10 @@ class ProfilePhotoCVC: UICollectionViewCell {
     }
 
     func fillCell(with image: UIImage?,
-                  userName: String?) {
+                  userName: String?,
+                  bioText: String?) {
         lblUserName.text = userName
+        bioLabel.text = bioText
         if let image = image {
             imgUser.image = image
         } else {

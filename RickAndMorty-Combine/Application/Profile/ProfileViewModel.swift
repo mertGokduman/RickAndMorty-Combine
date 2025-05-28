@@ -15,6 +15,7 @@ final class ProfileViewModel: BaseViewModel {
     var name: String = "New"
     var surname: String = "User"
     @Published var fullName: String?
+    @Published var userBio: String?
     @Published var isDarkModeOn: Bool?
     @Published var appIconName: String? = ""
     var isDataReady: AnyPublisher<Bool, Never> {
@@ -46,6 +47,10 @@ final class ProfileViewModel: BaseViewModel {
         //Surname
         if let surname = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsConstants.surname) {
             self.surname = surname
+        }
+
+        if let bioText = UserDefaults.standard.string(forKey: AppConstants.UserDefaultsConstants.bio) {
+            self.userBio = bioText
         }
 
         //Full Name
